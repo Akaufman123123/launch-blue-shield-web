@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const ClientsSection: React.FC = () => {
@@ -26,7 +25,8 @@ export const ClientsSection: React.FC = () => {
     {
       name: "Jade Capital",
       logo: "/lovable-uploads/7abbb654-6722-465b-89c8-944e8350d2f7.png",
-      website: "#"
+      website: "#",
+      bgColor: "bg-blue-600"
     }
   ];
 
@@ -47,7 +47,7 @@ export const ClientsSection: React.FC = () => {
               href={client.website}
               target="_blank"
               rel="noopener noreferrer" 
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-center justify-center h-32"
+              className={`bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-center justify-center h-32 ${client.bgColor || ''}`}
             >
               <img 
                 src={client.logo} 

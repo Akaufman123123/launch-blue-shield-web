@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   ShieldCheck, 
@@ -8,8 +7,8 @@ import {
   Zap, 
   Lock,
   MonitorCheck,
-  Link,
-  Settings
+  Phone,
+  BrainCircuit
 } from 'lucide-react';
 
 const services = [
@@ -49,14 +48,14 @@ const services = [
     description: 'Complete endpoint management with security, updates, and performance optimization.'
   },
   {
-    icon: Link,
+    icon: Phone,
     title: 'Business Phone Systems',
     description: 'Modern communication solutions including VoIP and integrated phone systems.'
   },
   {
-    icon: Settings,
+    icon: BrainCircuit,
     title: 'AI-Powered Monitoring',
-    description: 'Advanced monitoring systems using AI to predict and prevent potential issues.'
+    description: 'Advanced AI-driven monitoring systems to predict and prevent potential IT issues.'
   }
 ];
 
