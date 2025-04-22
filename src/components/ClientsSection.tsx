@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const ClientsSection: React.FC = () => {
@@ -6,8 +5,7 @@ export const ClientsSection: React.FC = () => {
     {
       name: "Jade Capital",
       logo: "/lovable-uploads/525770f0-2cb4-4480-8613-8b5724cdcd95.png",
-      website: "#",
-      bgColor: "bg-white border border-gray-200"
+      website: "#"
     },
     {
       name: "SBH Laboratories",
@@ -48,13 +46,12 @@ export const ClientsSection: React.FC = () => {
               href={client.website}
               target="_blank"
               rel="noopener noreferrer" 
-              className={`bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-center justify-center h-32 ${client.bgColor || ''}`}
+              className={`bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex items-center justify-center h-32`}
             >
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
-                className={`max-h-20 max-w-full object-contain ${client.name === "Jade Capital" ? 'bg-white p-2 rounded-lg border border-gray-200' : ''}`}
-                style={client.name === "Jade Capital" ? { backgroundColor: '#fff' } : undefined}
+                className="max-h-20 max-w-full object-contain"
               />
             </a>
           ))}
