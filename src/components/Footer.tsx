@@ -3,8 +3,11 @@ import React from 'react';
 import { ITLaunchLogo } from './Logo';
 import { Link } from 'react-scroll';
 import { Facebook, Twitter, Linkedin, Mail } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
@@ -34,7 +37,7 @@ export const Footer: React.FC = () => {
                 <Linkedin size={20} />
               </a>
               <a 
-                href="mailto:info@itlaunch.com" 
+                href="mailto:info@itlaunchsolutions.com" 
                 className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-colors"
               >
                 <Mail size={20} />
@@ -112,19 +115,39 @@ export const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-6">Our Services</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Cybersecurity</a>
+                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  Cybersecurity
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">IT Support</a>
+                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  IT Support
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Cloud Solutions</a>
+                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  Cloud Solutions
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Business Phone Systems</a>
+                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  Business Phone Systems
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Data Recovery</a>
+                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  Data Recovery
+                </Link>
               </li>
             </ul>
           </div>
@@ -141,7 +164,7 @@ export const Footer: React.FC = () => {
                 Phone: +1 (800) 123-4567
               </li>
               <li className="text-gray-400">
-                Email: info@itlaunch.com
+                Email: info@itlaunchsolutions.com
               </li>
               <li className="text-gray-400">
                 Support: 24/7 Available
@@ -156,9 +179,24 @@ export const Footer: React.FC = () => {
               &copy; {new Date().getFullYear()} IT Launch. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-blue-400 transition-colors">Sitemap</a>
+              <button
+                className="text-gray-400 hover:text-blue-400 transition-colors underline"
+                onClick={() => navigate('/privacy-policy')}
+              >
+                Privacy Policy
+              </button>
+              <button
+                className="text-gray-400 hover:text-blue-400 transition-colors underline"
+                onClick={() => navigate('/terms-of-service')}
+              >
+                Terms of Service
+              </button>
+              <button
+                className="text-gray-400 hover:text-blue-400 transition-colors underline"
+                onClick={() => navigate('/sitemap')}
+              >
+                Sitemap
+              </button>
             </div>
           </div>
         </div>

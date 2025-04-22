@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   ShieldCheck, 
@@ -6,7 +7,6 @@ import {
   Database, 
   Zap, 
   Lock,
-  MonitorCheck,
   Phone,
   BrainCircuit
 } from 'lucide-react';
@@ -44,7 +44,7 @@ const services = [
   },
   {
     icon: MonitorCheck,
-    title: 'Workstation Management',
+    title: 'Workstation and Device Management',
     description: 'Complete endpoint management with security, updates, and performance optimization.'
   },
   {

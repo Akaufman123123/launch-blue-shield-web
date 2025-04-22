@@ -119,7 +119,7 @@ export const ContactSection: React.FC = () => {
                     <Mail className="h-5 w-5 text-blue-600" />
                   </div>
                   <div className="ml-3">
-                    <p className="text-gray-700">support@itlaunch.com</p>
+                    <p className="text-gray-700">info@itlaunchsolutions.com</p>
                   </div>
                 </div>
                 

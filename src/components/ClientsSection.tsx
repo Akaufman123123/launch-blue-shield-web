@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export const ClientsSection: React.FC = () => {
@@ -24,9 +25,10 @@ export const ClientsSection: React.FC = () => {
     },
     {
       name: "Jade Capital",
-      logo: "/lovable-uploads/7abbb654-6722-465b-89c8-944e8350d2f7.png",
+      // Use the newly attached logo:
+      logo: "/lovable-uploads/525770f0-2cb4-4480-8613-8b5724cdcd95.png",
       website: "#",
-      bgColor: "bg-blue-600"
+      bgColor: "bg-white border border-gray-200"
     }
   ];
 
@@ -52,7 +54,8 @@ export const ClientsSection: React.FC = () => {
               <img 
                 src={client.logo} 
                 alt={`${client.name} logo`} 
-                className="max-h-20 max-w-full object-contain"
+                className={`max-h-20 max-w-full object-contain ${client.name === "Jade Capital" ? 'bg-white p-2 rounded-lg border border-gray-200' : ''}`}
+                style={client.name === "Jade Capital" ? { backgroundColor: '#fff' } : undefined}
               />
             </a>
           ))}
