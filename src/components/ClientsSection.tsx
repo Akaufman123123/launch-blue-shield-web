@@ -1,12 +1,12 @@
-
 import React from 'react';
 
 export const ClientsSection: React.FC = () => {
   const clients = [
     {
-      name: "Clarity Diagnostics",
-      logo: "/lovable-uploads/7395c08c-ed93-419d-82fa-788210be53ad.png",
-      website: "https://claritydiagnostics.com/"
+      name: "Jade Capital",
+      logo: "/lovable-uploads/525770f0-2cb4-4480-8613-8b5724cdcd95.png",
+      website: "#",
+      bgColor: "bg-white border border-gray-200"
     },
     {
       name: "SBH Laboratories",
@@ -24,11 +24,9 @@ export const ClientsSection: React.FC = () => {
       website: "https://achieverstherapy.com/"
     },
     {
-      name: "Jade Capital",
-      // Use the newly attached logo:
-      logo: "/lovable-uploads/525770f0-2cb4-4480-8613-8b5724cdcd95.png",
-      website: "#",
-      bgColor: "bg-white border border-gray-200"
+      name: "Clarity Diagnostics",
+      logo: "/lovable-uploads/7395c08c-ed93-419d-82fa-788210be53ad.png",
+      website: "https://claritydiagnostics.com/"
     }
   ];
 
