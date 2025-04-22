@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export const ClientsSection: React.FC = () => {
@@ -25,7 +26,7 @@ export const ClientsSection: React.FC = () => {
     },
     {
       name: "Clarity Diagnostics",
-      logo: "/lovable-uploads/7395c08c-ed93-419d-82fa-788210be53ad.png",
+      logo: "/lovable-uploads/852ae307-06c4-41b6-b57c-e84a12b51789.png",
       website: "https://claritydiagnostics.com/"
     }
   ];
