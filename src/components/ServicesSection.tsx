@@ -8,7 +8,8 @@ import {
   Zap, 
   Lock,
   Phone,
-  BrainCircuit
+  BrainCircuit,
+  MonitorCheck
 } from 'lucide-react';
 
 const services = [
