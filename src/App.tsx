@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -9,6 +8,15 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import Sitemap from "./pages/Sitemap";
+import Cybersecurity from "@/pages/services/Cybersecurity";
+import ServerManagement from "@/pages/services/ServerManagement";
+import NetworkSetup from "@/pages/services/NetworkSetup";
+import DataRecovery from "@/pages/services/DataRecovery";
+import CloudSecurity from "@/pages/services/CloudSecurity";
+import ITPlanning from "@/pages/services/ITPlanning";
+import WorkstationManagement from "@/pages/services/WorkstationManagement";
+import PhoneSystems from "@/pages/services/PhoneSystems";
+import AIMonitoring from "@/pages/services/AIMonitoring";
 
 const queryClient = new QueryClient();
 
@@ -23,7 +31,15 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/sitemap" element={<Sitemap />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+          <Route path="/services/server-management" element={<ServerManagement />} />
+          <Route path="/services/network-setup" element={<NetworkSetup />} />
+          <Route path="/services/data-recovery" element={<DataRecovery />} />
+          <Route path="/services/cloud-security" element={<CloudSecurity />} />
+          <Route path="/services/it-planning" element={<ITPlanning />} />
+          <Route path="/services/workstation-management" element={<WorkstationManagement />} />
+          <Route path="/services/phone-systems" element={<PhoneSystems />} />
+          <Route path="/services/ai-monitoring" element={<AIMonitoring />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
