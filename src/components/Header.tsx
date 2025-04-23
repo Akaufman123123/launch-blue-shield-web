@@ -46,7 +46,14 @@ export const Header: React.FC = () => {
         }
       } else {
         // If we're on another page, navigate to home page with the anchor
-        navigate(path);
+        navigate('/');
+        // Need a small timeout to let the new page load before scrolling
+        setTimeout(() => {
+          const element = document.getElementById(path.substring(2));
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
       }
     } else {
       // Regular navigation
@@ -59,7 +66,7 @@ export const Header: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white shadow-md py-2' 
-          : 'bg-white py-4 shadow-sm'
+          : 'bg-white py-3 shadow-sm'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
