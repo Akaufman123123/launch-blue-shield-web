@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   ShieldCheck, 
@@ -11,7 +12,7 @@ import {
   MonitorCheck,
   Monitor
 } from 'lucide-react';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
@@ -80,6 +81,13 @@ const serviceRoutes: Record<string, string> = {
 };
 
 export const ServicesSection: React.FC = () => {
+  const navigate = useNavigate();
+  
+  const handleServiceClick = (path: string) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -95,10 +103,10 @@ export const ServicesSection: React.FC = () => {
             const routePath = serviceRoutes[service.title] || "/";
 
             return (
-              <Link
-                to={routePath}
+              <div
                 key={index}
-                className="block"
+                className="cursor-pointer"
+                onClick={() => handleServiceClick(routePath)}
               >
                 <div 
                   className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-100 h-full"
@@ -109,7 +117,7 @@ export const ServicesSection: React.FC = () => {
                   <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">{service.title}</h3>
                   <p className="text-gray-600 text-center">{service.description}</p>
                 </div>
-              </Link>
+              </div>
             )
           })}
         </div>

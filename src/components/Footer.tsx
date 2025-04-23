@@ -1,11 +1,26 @@
+
 import React from 'react';
 import { ITLaunchLogo } from './Logo';
-import { Link as ScrollLink } from 'react-scroll';
-import { Facebook, Twitter, Linkedin, Mail } from 'lucide-react';
 import { useNavigate, Link } from 'react-router-dom';
+import { Facebook, Twitter, Linkedin, Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const navigate = useNavigate();
+  
+  const handleNavigation = (path: string) => {
+    if (path.startsWith('/#')) {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(path.substring(2));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      navigate(path);
+      window.scrollTo(0, 0);
+    }
+  };
 
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
@@ -48,44 +63,44 @@ export const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link
-                  to="/"
+                <button
+                  onClick={() => handleNavigation('/')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Home
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  to="/#services"
+                <button
+                  onClick={() => handleNavigation('/#services')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Services
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  to="/#clients"
+                <button
+                  onClick={() => handleNavigation('/#clients')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Clients
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  to="/#about"
+                <button
+                  onClick={() => handleNavigation('/#about')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   About Us
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  to="/#contact"
+                <button
+                  onClick={() => handleNavigation('/#contact')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Contact
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -94,39 +109,44 @@ export const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-6">Our Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/services/cybersecurity" 
+                <button
+                  onClick={() => handleNavigation('/services/cybersecurity')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Cybersecurity
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/services/server-management"
+                <button
+                  onClick={() => handleNavigation('/services/server-management')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Server Management
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/services/cloud-security"
+                <button
+                  onClick={() => handleNavigation('/services/cloud-security')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Cloud Security
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/services/phone-systems"
+                <button
+                  onClick={() => handleNavigation('/services/phone-systems')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Business Phone Systems
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/services/data-recovery"
+                <button
+                  onClick={() => handleNavigation('/services/data-recovery')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Data Recovery
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -160,19 +180,19 @@ export const Footer: React.FC = () => {
             <div className="flex space-x-6">
               <button
                 className="text-gray-400 hover:text-blue-400 transition-colors underline"
-                onClick={() => navigate('/privacy-policy')}
+                onClick={() => handleNavigation('/privacy-policy')}
               >
                 Privacy Policy
               </button>
               <button
                 className="text-gray-400 hover:text-blue-400 transition-colors underline"
-                onClick={() => navigate('/terms-of-service')}
+                onClick={() => handleNavigation('/terms-of-service')}
               >
                 Terms of Service
               </button>
               <button
                 className="text-gray-400 hover:text-blue-400 transition-colors underline"
-                onClick={() => navigate('/sitemap')}
+                onClick={() => handleNavigation('/sitemap')}
               >
                 Sitemap
               </button>

@@ -38,9 +38,11 @@ export const Header: React.FC = () => {
     setIsMobileMenuOpen(false);
     
     if (path.startsWith('/#')) {
-      // If we're already on the home page and it's an anchor link
+      const targetId = path.substring(2);
+      
+      // If we're already on the home page
       if (location.pathname === '/') {
-        const element = document.getElementById(path.substring(2));
+        const element = document.getElementById(targetId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
         }
@@ -49,7 +51,7 @@ export const Header: React.FC = () => {
         navigate('/');
         // Need a small timeout to let the new page load before scrolling
         setTimeout(() => {
-          const element = document.getElementById(path.substring(2));
+          const element = document.getElementById(targetId);
           if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
           }
@@ -58,6 +60,7 @@ export const Header: React.FC = () => {
     } else {
       // Regular navigation
       navigate(path);
+      window.scrollTo(0, 0);
     }
   };
 
