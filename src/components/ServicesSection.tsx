@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   ShieldCheck, 
@@ -17,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 const services = [
   {
     icon: ShieldCheck,
-    title: 'Cybersecurity Solutions',
+    title: 'Cybersecurity',
     description: 'Advanced protection for your digital assets with firewall, email, and endpoint security.'
   },
   {
@@ -34,11 +33,6 @@ const services = [
     icon: Database,
     title: 'Disaster & Data Recovery',
     description: 'Comprehensive backup and recovery solutions to protect your critical data.'
-  },
-  {
-    icon: Lock,
-    title: 'Cloud Security',
-    description: 'Secure cloud solutions with managed access control and data protection.'
   },
   {
     icon: Zap,
@@ -68,11 +62,10 @@ const services = [
 ];
 
 const serviceRoutes: Record<string, string> = {
-  "Cybersecurity Solutions": "/services/cybersecurity",
+  "Cybersecurity": "/services/cybersecurity",
   "Server Management": "/services/server-management",
   "Network Setup & Management": "/services/network-setup",
   "Disaster & Data Recovery": "/services/data-recovery",
-  "Cloud Security": "/services/cloud-security",
   "IT Planning & Architecture": "/services/it-planning",
   "Workstation Management": "/services/workstation-management",
   "Business Phone Systems": "/services/phone-systems",

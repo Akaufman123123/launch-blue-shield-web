@@ -18,12 +18,12 @@ const AIMonitoring = () => {
         <meta name="keywords" content="AI monitoring, predictive maintenance, proactive IT, performance optimization, system analytics" />
       </Helmet>
       <Header />
-      <div className="flex-grow mt-10 pt-6">
+      <div className="flex-grow mt-16 pt-6">
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1581092921461-eab10380b31b?auto=format&fit=crop&w=2000&q=80" 
-              alt="AI-Powered IT Monitoring Solutions" 
+              src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=2000&q=80" 
+              alt="AI-Powered IT Monitoring" 
               className="w-full h-80 object-cover" 
             />
           </div>

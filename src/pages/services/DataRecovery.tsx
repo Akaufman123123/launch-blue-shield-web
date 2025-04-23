@@ -18,12 +18,12 @@ const DataRecovery = () => {
         <meta name="keywords" content="data recovery, disaster recovery, business continuity, data backup, data restoration, secure storage" />
       </Helmet>
       <Header />
-      <div className="flex-grow mt-10 pt-6">
+      <div className="flex-grow mt-16 pt-6">
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2000&q=80" 
-              alt="Professional Data Recovery Services" 
+              src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=80" 
+              alt="Data Recovery Services" 
               className="w-full h-80 object-cover" 
             />
           </div>

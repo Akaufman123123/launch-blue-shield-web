@@ -13,28 +13,28 @@ const Cybersecurity = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Helmet>
-        <title>Advanced Cybersecurity Solutions | IT Launch Solutions</title>
-        <meta name="description" content="Comprehensive cybersecurity solutions for businesses. Advanced protection with firewall configurations, email filtering, and endpoint security to safeguard your digital assets." />
-        <meta name="keywords" content="cybersecurity, network security, data protection, firewall, endpoint protection, threat prevention" />
+        <title>Cybersecurity Services | IT Launch Solutions</title>
+        <meta name="description" content="Advanced cybersecurity solutions including cloud security, network protection, and threat prevention for your business." />
+        <meta name="keywords" content="cybersecurity, cloud security, network security, data protection, threat prevention" />
       </Helmet>
       <Header />
-      <div className="flex-grow mt-10 pt-6">
+      <div className="flex-grow mt-16 pt-6">
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=2000&q=80" 
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=2000&q=80" 
               alt="Advanced Cybersecurity Solutions" 
               className="w-full h-80 object-cover" 
             />
           </div>
-          <h1 className="text-4xl font-bold mb-6 text-blue-800">Cybersecurity Solutions</h1>
+          <h1 className="text-4xl font-bold mb-6 text-blue-800">Cybersecurity</h1>
           <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Safeguard your business from sophisticated digital threats with our enterprise-grade cybersecurity services.
-            We provide advanced firewall configurations, proactive email filtering, and comprehensive endpoint protection
-            to ensure your networks, devices, and sensitive data remain secure. Our certified security experts conduct ongoing vulnerability
-            assessments and implement best-in-class solutions tailored to your specific industry requirements. We help you maintain
-            regulatory compliance, prevent cyberattacks before they compromise your systems, and protect your business reputation, 
-            allowing you to focus on serving your customers without security concerns.
+            Protect your business with our comprehensive cybersecurity solutions. We provide advanced protection 
+            for your digital assets through multi-layered security measures, including cloud security infrastructure, 
+            network monitoring, and threat detection. Our cloud security services ensure your data remains protected 
+            whether it's stored on-premises or in the cloud, with features like encrypted storage, secure access controls, 
+            and real-time threat monitoring. We implement industry-leading security protocols to safeguard your sensitive 
+            information across all platforms and environments.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ITLaunchLogo } from './Logo';
 import { useNavigate, Link } from 'react-router-dom';
@@ -154,14 +153,6 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-6">Contact Us</h3>
             <ul className="space-y-3">
-              <li className="text-gray-400">
-                1234 Tech Drive, Suite 500
-                <br />
-                Silicon Valley, CA 94043
-              </li>
-              <li className="text-gray-400">
-                Phone: +1 (800) 123-4567
-              </li>
               <li className="text-gray-400">
                 Email: info@itlaunchsolutions.com
               </li>

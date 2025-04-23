@@ -18,11 +18,11 @@ const PhoneSystems = () => {
         <meta name="keywords" content="business phone systems, VoIP, call routing, conferencing, remote access, telecommunications" />
       </Helmet>
       <Header />
-      <div className="flex-grow mt-10 pt-6">
+      <div className="flex-grow mt-16 pt-6">
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?auto=format&fit=crop&w=2000&q=80" 
+              src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=2000&q=80" 
               alt="Modern Business Phone Solutions" 
               className="w-full h-80 object-cover" 
             />
