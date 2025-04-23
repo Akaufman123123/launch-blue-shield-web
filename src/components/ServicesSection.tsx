@@ -9,7 +9,8 @@ import {
   Lock,
   Phone,
   BrainCircuit,
-  Monitor
+  Monitor,
+  MonitorCheck
 } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
