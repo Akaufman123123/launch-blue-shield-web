@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { createClient } from '@supabase/supabase-js';
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -45,22 +44,23 @@ export const ContactSection: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      const supabase = createClient(
-        import.meta.env.VITE_SUPABASE_URL,
-        import.meta.env.VITE_SUPABASE_ANON_KEY
-      );
-      
-      const { error } = await supabase.from('contact_submissions').insert([
-        {
+      // Instead of using Supabase directly, use a simple fetch to send the form data
+      const response = await fetch('https://formspree.io/f/info@itlaunchsolutions.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
           name: data.name,
           email: data.email,
           company: data.company,
-          message: data.message,
-          recipient_email: 'info@itlaunchsolutions.com'
-        }
-      ]);
+          message: data.message
+        })
+      });
 
-      if (error) throw error;
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
 
       toast({
         title: "Message sent!",
