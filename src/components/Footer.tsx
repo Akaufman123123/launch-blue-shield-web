@@ -1,9 +1,8 @@
-
 import React from 'react';
 import { ITLaunchLogo } from './Logo';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 import { Facebook, Twitter, Linkedin, Mail } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -50,11 +49,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3">
               <li>
                 <Link
-                  to="home"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
+                  to="/"
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Home
@@ -62,11 +57,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
+                  to="/#services"
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Services
@@ -74,11 +65,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="clients"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
+                  to="/#clients"
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Clients
@@ -86,11 +73,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
+                  to="/#about"
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   About Us
@@ -98,11 +81,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={-80}
-                  duration={500}
+                  to="/#contact"
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Contact
@@ -115,35 +94,35 @@ export const Footer: React.FC = () => {
             <h3 className="text-xl font-bold mb-6">Our Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                <Link to="/services/cybersecurity" 
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Cybersecurity
                 </Link>
               </li>
               <li>
-                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                <Link to="/services/server-management"
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
-                  IT Support
+                  Server Management
                 </Link>
               </li>
               <li>
-                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                <Link to="/services/cloud-security"
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
-                  Cloud Solutions
+                  Cloud Security
                 </Link>
               </li>
               <li>
-                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                <Link to="/services/phone-systems"
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Business Phone Systems
                 </Link>
               </li>
               <li>
-                <Link to="services" spy={true} smooth={true} offset={-80} duration={500}
+                <Link to="/services/data-recovery"
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   Data Recovery
