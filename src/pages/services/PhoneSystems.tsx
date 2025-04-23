@@ -23,7 +23,7 @@ const PhoneSystems = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1598808503246-39c7452d7b7c?auto=format&fit=crop&w=2000&q=80" 
+              src="https://images.unsplash.com/photo-1520923642038-b4259acecbd7?auto=format&fit=crop&w=2000&q=80" 
               alt="Modern Business Phone Solutions" 
               className="w-full h-80 object-cover" 
             />

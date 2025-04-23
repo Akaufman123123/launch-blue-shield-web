@@ -44,8 +44,8 @@ export const ContactSection: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Instead of using Supabase directly, use a simple fetch to send the form data
-      const response = await fetch('https://formspree.io/f/info@itlaunchsolutions.com', {
+      // Using a valid Formspree endpoint format
+      const response = await fetch('https://formspree.io/f/mzgznnll', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
