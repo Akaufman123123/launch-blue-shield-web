@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -22,8 +23,8 @@ const DeviceManagement = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=2000&q=80" 
-              alt="Enterprise Device Management" 
+              src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&w=2000&q=80" 
+              alt="Mobile Device Management" 
               className="w-full h-80 object-cover" 
             />
           </div>

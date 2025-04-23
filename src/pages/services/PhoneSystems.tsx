@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -22,7 +23,7 @@ const PhoneSystems = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=2000&q=80" 
+              src="https://images.unsplash.com/photo-1560265036-021b3652b86b?auto=format&fit=crop&w=2000&q=80" 
               alt="Modern Business Phone Solutions" 
               className="w-full h-80 object-cover" 
             />

@@ -14,16 +14,16 @@ const DataRecovery = () => {
     <div className="flex flex-col min-h-screen">
       <Helmet>
         <title>Data Recovery & Disaster Protection | IT Launch Solutions</title>
-        <meta name="description" content="Professional data recovery services for businesses. Protect your critical data with automated backups, secure storage, and rapid restoration solutions." />
-        <meta name="keywords" content="data recovery, disaster recovery, business continuity, data backup, data restoration, secure storage" />
+        <meta name="description" content="Comprehensive data backup and disaster recovery solutions to protect your business from data loss, with rapid recovery times and minimal disruption." />
+        <meta name="keywords" content="data recovery, disaster recovery, data backup, business continuity, data protection" />
       </Helmet>
       <Header />
       <div className="flex-grow mt-16 pt-6">
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=80" 
-              alt="Data Recovery Services" 
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2000&q=80" 
+              alt="Data Recovery Solutions" 
               className="w-full h-80 object-cover" 
             />
           </div>

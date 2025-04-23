@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { 
   ShieldCheck, 
@@ -8,7 +9,6 @@ import {
   Lock,
   Phone,
   BrainCircuit,
-  MonitorCheck,
   Monitor
 } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ const services = [
   {
     icon: ShieldCheck,
     title: 'Cybersecurity',
-    description: 'Advanced protection for your digital assets with firewall, email, and endpoint security.'
+    description: 'Advanced protection for your digital assets with firewall, email, endpoint security, and cloud security solutions.'
   },
   {
     icon: Server,
