@@ -1,21 +1,23 @@
 
 import React, { useState, useEffect } from 'react';
 import { ITLaunchLogo, ITLaunchLogoSmall } from './Logo';
-import { Link } from 'react-scroll';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const navItems = [
-  { name: 'Home', to: 'home' },
-  { name: 'Services', to: 'services' },
-  { name: 'Clients', to: 'clients' },
-  { name: 'About', to: 'about' },
-  { name: 'Contact', to: 'contact' },
+  { name: 'Home', to: '/' },
+  { name: 'Services', to: '/#services' },
+  { name: 'Clients', to: '/#clients' },
+  { name: 'About', to: '/#about' },
+  { name: 'Contact', to: '/#contact' },
 ];
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,33 +34,51 @@ export const Header: React.FC = () => {
     };
   }, []);
 
+  const handleNavigation = (path: string) => {
+    setIsMobileMenuOpen(false);
+    
+    if (path.startsWith('/#')) {
+      // If we're already on the home page and it's an anchor link
+      if (location.pathname === '/') {
+        const element = document.getElementById(path.substring(2));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // If we're on another page, navigate to home page with the anchor
+        navigate(path);
+      }
+    } else {
+      // Regular navigation
+      navigate(path);
+    }
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white shadow-md py-2' 
-          : 'bg-transparent py-4'
+          : 'bg-white py-4 shadow-sm'
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        {isScrolled ? <ITLaunchLogoSmall /> : <ITLaunchLogo />}
+        <div onClick={() => navigate('/')} className="cursor-pointer">
+          {isScrolled ? <ITLaunchLogoSmall /> : <ITLaunchLogo />}
+        </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <Link
+            <button
               key={item.name}
-              to={item.to}
-              spy={true}
-              smooth={true}
-              offset={-80}
-              duration={500}
+              onClick={() => handleNavigation(item.to)}
               className={`${
                 isScrolled ? 'text-gray-700' : 'text-gray-800'
               } hover:text-blue-600 cursor-pointer transition-colors font-medium`}
             >
               {item.name}
-            </Link>
+            </button>
           ))}
           <Button className="bg-blue-600 hover:bg-blue-700 text-white">
             Get Support
@@ -83,18 +103,13 @@ export const Header: React.FC = () => {
         <div className="md:hidden bg-white shadow-lg">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             {navItems.map((item) => (
-              <Link
+              <button
                 key={item.name}
-                to={item.to}
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                className="text-gray-700 hover:text-blue-600 cursor-pointer transition-colors py-2 font-medium"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => handleNavigation(item.to)}
+                className="text-gray-700 hover:text-blue-600 cursor-pointer transition-colors py-2 font-medium text-left"
               >
                 {item.name}
-              </Link>
+              </button>
             ))}
             <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">
               Get Support
