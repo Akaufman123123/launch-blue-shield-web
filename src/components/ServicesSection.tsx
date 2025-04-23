@@ -8,7 +8,8 @@ import {
   Lock,
   Phone,
   BrainCircuit,
-  MonitorCheck
+  MonitorCheck,
+  Monitor
 } from 'lucide-react';
 import { Link } from "react-router-dom";
 
@@ -45,8 +46,8 @@ const services = [
   },
   {
     icon: MonitorCheck,
-    title: 'Workstation and Device Management',
-    description: 'Complete endpoint management with security, updates, and performance optimization.'
+    title: 'Workstation Management',
+    description: 'Complete workstation management with security, updates, and performance optimization.'
   },
   {
     icon: Phone,
@@ -57,8 +58,26 @@ const services = [
     icon: BrainCircuit,
     title: 'AI-Powered Monitoring',
     description: 'Advanced AI-driven monitoring systems to predict and prevent potential IT issues.'
+  },
+  {
+    icon: Monitor,
+    title: 'Device Management',
+    description: 'Comprehensive mobile device and tablet management for your entire organization.'
   }
 ];
+
+const serviceRoutes: Record<string, string> = {
+  "Cybersecurity Solutions": "/services/cybersecurity",
+  "Server Management": "/services/server-management",
+  "Network Setup & Management": "/services/network-setup",
+  "Disaster & Data Recovery": "/services/data-recovery",
+  "Cloud Security": "/services/cloud-security",
+  "IT Planning & Architecture": "/services/it-planning",
+  "Workstation Management": "/services/workstation-management",
+  "Business Phone Systems": "/services/phone-systems",
+  "AI-Powered Monitoring": "/services/ai-monitoring",
+  "Device Management": "/services/device-management",
+};
 
 export const ServicesSection: React.FC = () => {
   return (
@@ -73,17 +92,6 @@ export const ServicesSection: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
-            const serviceRoutes: Record<string, string> = {
-              "Cybersecurity Solutions": "/services/cybersecurity",
-              "Server Management": "/services/server-management",
-              "Network Setup & Management": "/services/network-setup",
-              "Disaster & Data Recovery": "/services/data-recovery",
-              "Cloud Security": "/services/cloud-security",
-              "IT Planning & Architecture": "/services/it-planning",
-              "Workstation and Device Management": "/services/workstation-management",
-              "Business Phone Systems": "/services/phone-systems",
-              "AI-Powered Monitoring": "/services/ai-monitoring",
-            };
             const routePath = serviceRoutes[service.title] || "/";
 
             return (

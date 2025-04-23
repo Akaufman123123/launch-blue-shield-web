@@ -17,6 +17,7 @@ import ITPlanning from "@/pages/services/ITPlanning";
 import WorkstationManagement from "@/pages/services/WorkstationManagement";
 import PhoneSystems from "@/pages/services/PhoneSystems";
 import AIMonitoring from "@/pages/services/AIMonitoring";
+import DeviceManagement from "@/pages/services/DeviceManagement";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/services/workstation-management" element={<WorkstationManagement />} />
           <Route path="/services/phone-systems" element={<PhoneSystems />} />
           <Route path="/services/ai-monitoring" element={<AIMonitoring />} />
+          <Route path="/services/device-management" element={<DeviceManagement />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
