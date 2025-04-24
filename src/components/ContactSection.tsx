@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Mail, Clock, CheckCircle, Loader2 } from 'lucide-react';
@@ -44,8 +43,8 @@ export const ContactSection: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Using a valid Formspree endpoint format
-      const response = await fetch('https://formspree.io/f/mzgznnll', {
+      // Using the @formspree/react library for form submission
+      const response = await fetch('https://formspree.io/f/xpzvzpgg', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
