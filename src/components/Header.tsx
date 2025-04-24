@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ITLaunchLogo, ITLaunchLogoSmall } from './Logo';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -9,7 +10,6 @@ const navItems = [
   { name: 'Services', to: '/#services' },
   { name: 'Clients', to: '/#clients' },
   { name: 'About', to: '/#about' },
-  { name: 'Contact', to: '/#contact' },
 ];
 
 export const Header: React.FC = () => {
@@ -89,7 +89,12 @@ export const Header: React.FC = () => {
               {item.name}
             </button>
           ))}
-          
+          <Button 
+            onClick={() => handleNavigation('/#contact')}
+            className="bg-blue-600 hover:bg-blue-700 text-white"
+          >
+            Contact
+          </Button>
         </nav>
 
         {/* Mobile menu button */}
@@ -118,8 +123,11 @@ export const Header: React.FC = () => {
                 {item.name}
               </button>
             ))}
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">
-              Contact Us
+            <Button 
+              onClick={() => handleNavigation('/#contact')}
+              className="bg-blue-600 hover:bg-blue-700 text-white w-full"
+            >
+              Contact
             </Button>
           </div>
         </div>
