@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -10,7 +11,7 @@ const DataRecovery = () => {
         <h1 className="text-4xl font-bold text-center mb-8">Data Recovery Services</h1>
         <div className="max-w-3xl mx-auto">
           <img 
-            src="/lovable-uploads/data.png" 
+            src="/lovable-uploads/852ae307-06c4-41b6-b57c-e84a12b51789.png" 
             alt="Data Recovery Services" 
             className="w-full rounded-lg shadow-lg mb-8"
           />
