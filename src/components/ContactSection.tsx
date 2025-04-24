@@ -5,6 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { supabase } from "@/integrations/supabase/client";
 import {
   Form,
   FormControl,
@@ -43,23 +44,16 @@ export const ContactSection: React.FC = () => {
     setIsSubmitting(true);
     
     try {
-      // Using the @formspree/react library for form submission
-      const response = await fetch('https://formspree.io/f/xpzvzpgg', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([{
           name: data.name,
           email: data.email,
           company: data.company,
           message: data.message
-        })
-      });
+        }]);
 
-      if (!response.ok) {
-        throw new Error('Form submission failed');
-      }
+      if (error) throw error;
 
       toast({
         title: "Message sent!",

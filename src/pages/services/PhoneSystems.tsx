@@ -1,84 +1,42 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ContactSection } from '@/components/ContactSection';
-import { Card } from '@/components/ui/card';
-import { Helmet } from 'react-helmet-async';
 
 const PhoneSystems = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  
   return (
-    <div className="flex flex-col min-h-screen">
-      <Helmet>
-        <title>Business Phone System Solutions | IT Launch Solutions</title>
-        <meta name="description" content="Modern business phone solutions including VoIP and integrated systems with features like voicemail-to-email, call routing, and conferencing." />
-        <meta name="keywords" content="business phone systems, VoIP, call routing, conferencing, remote access, telecommunications" />
-      </Helmet>
+    <div className="min-h-screen">
       <Header />
-      <div className="flex-grow mt-16 pt-6">
-        <div className="container mx-auto px-4 py-12">
-          <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src="/lovable-uploads/561136a9-858b-4ba0-b928-88e424192d35.png" 
-              alt="Modern Business Phone Solutions" 
-              className="w-full h-80 object-cover" 
-            />
-          </div>
-          <h1 className="text-4xl font-bold mb-6 text-blue-800">Business Phone Systems</h1>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Empower your team with flexible, modern business phone solutions. We design and deploy VoIP and integrated
-            phone systems that connect employees and clients with clarity and reliability. Our platforms include features
-            like voicemail-to-email, call routing, conferencing, and remote access—so your business can communicate
-            professionally any time, anywhere.
+      <div className="container mx-auto px-4 py-20">
+        <h1 className="text-4xl font-bold text-center mb-8">Business Phone Systems</h1>
+        <div className="max-w-3xl mx-auto">
+          <img 
+            src="/lovable-uploads/phone1.png" 
+            alt="Business Phone Systems" 
+            className="w-full rounded-lg shadow-lg mb-8"
+          />
+          <p className="text-gray-700 leading-relaxed mb-6">
+            In today's fast-paced business environment, having a reliable and efficient phone system is crucial. At IT Launch Solutions, we offer comprehensive business phone system services designed to meet the unique needs of your organization. Whether you're a small startup or a large enterprise, we have the expertise to provide you with a communication solution that enhances productivity and reduces costs.
           </p>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-6 shadow-md">
-              <h2 className="text-xl font-semibold mb-3 text-blue-700">VoIP Integration</h2>
-              <p className="text-gray-600">
-                Our Voice over IP (VoIP) solutions deliver crystal-clear communication while reducing costs compared to 
-                traditional phone systems. We seamlessly integrate VoIP technology with your existing infrastructure, 
-                enabling features like video conferencing, instant messaging, and presence indication. This unified 
-                communication approach improves team collaboration regardless of location.
-              </p>
-            </Card>
-            
-            <Card className="p-6 shadow-md">
-              <h2 className="text-xl font-semibold mb-3 text-blue-700">Advanced Call Features</h2>
-              <p className="text-gray-600">
-                Enhance your business communications with advanced call management capabilities. Our systems provide 
-                intelligent call routing, automated attendants, call queuing, and detailed analytics. These features 
-                ensure callers are directed to the right person quickly, improving customer satisfaction and streamlining 
-                internal workflows.
-              </p>
-            </Card>
-            
-            <Card className="p-6 shadow-md">
-              <h2 className="text-xl font-semibold mb-3 text-blue-700">Mobile Integration</h2>
-              <p className="text-gray-600">
-                Stay connected and professional wherever you work with our mobile-integrated phone solutions. We extend 
-                your office phone system to smartphones and tablets, allowing team members to make and receive business 
-                calls using their work number while away from the desk. This seamless integration maintains consistent 
-                communication regardless of device or location.
-              </p>
-            </Card>
-            
-            <Card className="p-6 shadow-md">
-              <h2 className="text-xl font-semibold mb-3 text-blue-700">Scalable Solutions</h2>
-              <p className="text-gray-600">
-                Our business phone systems grow alongside your company with minimal disruption or additional hardware. 
-                Adding new users, locations, or features can be done quickly and efficiently through our cloud-based 
-                management interface. This scalability ensures your communication system remains cost-effective while 
-                meeting your evolving business requirements.
-              </p>
-            </Card>
-          </div>
+          <h2 className="text-2xl font-bold mb-4">Our Business Phone System Services</h2>
+          <ul className="list-disc list-inside text-gray-700 mb-6">
+            <li><strong>System Design and Implementation:</strong> We work with you to design a phone system that aligns with your business goals and operational requirements. Our team handles the entire implementation process, ensuring a seamless transition with minimal disruption.</li>
+            <li><strong>VoIP Solutions:</strong> Leverage the power of Voice over Internet Protocol (VoIP) to make calls over the internet. VoIP systems offer greater flexibility, scalability, and cost savings compared to traditional phone systems.</li>
+            <li><strong>Cloud-Based Phone Systems:</strong> Embrace the cloud for your phone system needs. Our cloud-based solutions provide advanced features, easy management, and the ability to access your phone system from anywhere.</li>
+            <li><strong>Maintenance and Support:</strong> We offer ongoing maintenance and support to keep your phone system running smoothly. Our support team is available to address any issues and provide timely resolutions.</li>
+            <li><strong>Integration with Business Applications:</strong> Integrate your phone system with other business applications, such as CRM and help desk software, to streamline workflows and improve customer service.</li>
+          </ul>
+          <h2 className="text-2xl font-bold mb-4">Benefits of Our Phone System Services</h2>
+          <ul className="list-disc list-inside text-gray-700 mb-6">
+            <li><strong>Cost Savings:</strong> Reduce your communication costs with our efficient and scalable phone system solutions.</li>
+            <li><strong>Enhanced Productivity:</strong> Improve employee productivity with advanced features such as call routing, voicemail-to-email, and mobile integration.</li>
+            <li><strong>Scalability:</strong> Easily scale your phone system as your business grows, without the need for expensive hardware upgrades.</li>
+            <li><strong>Reliability:</strong> Ensure reliable communication with our robust and redundant phone system infrastructure.</li>
+            <li><strong>Improved Customer Service:</strong> Provide exceptional customer service with features such as automated greetings, call queuing, and customer history integration.</li>
+          </ul>
+          <p className="text-gray-700 leading-relaxed">
+            Ready to upgrade your business phone system? Contact IT Launch Solutions today to schedule a consultation. Let us help you design and implement a phone system that meets your unique needs and supports your business growth.
+          </p>
         </div>
-        <ContactSection />
       </div>
       <Footer />
     </div>

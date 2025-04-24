@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ITLaunchLogo, ITLaunchLogoSmall } from './Logo';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -91,7 +90,7 @@ export const Header: React.FC = () => {
             </button>
           ))}
           <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-            Get Support
+            Contact Us
           </Button>
         </nav>
 
@@ -122,7 +121,7 @@ export const Header: React.FC = () => {
               </button>
             ))}
             <Button className="bg-blue-600 hover:bg-blue-700 text-white w-full">
-              Get Support
+              Contact Us
             </Button>
           </div>
         </div>

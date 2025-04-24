@@ -1,85 +1,43 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { ContactSection } from '@/components/ContactSection';
-import { Card } from '@/components/ui/card';
-import { Helmet } from 'react-helmet-async';
 
 const DataRecovery = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-  
   return (
-    <div className="flex flex-col min-h-screen">
-      <Helmet>
-        <title>Data Recovery & Disaster Protection | IT Launch Solutions</title>
-        <meta name="description" content="Comprehensive data backup and disaster recovery solutions to protect your business from data loss, with rapid recovery times and minimal disruption." />
-        <meta name="keywords" content="data recovery, disaster recovery, data backup, business continuity, data protection" />
-      </Helmet>
+    <div className="min-h-screen">
       <Header />
-      <div className="flex-grow mt-16 pt-6">
-        <div className="container mx-auto px-4 py-12">
-          <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
-            <img 
-              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=2000&q=80" 
-              alt="Data Recovery Solutions" 
-              className="w-full h-80 object-cover" 
-            />
-          </div>
-          <h1 className="text-4xl font-bold mb-6 text-blue-800">Disaster & Data Recovery</h1>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-            Protect your critical business data from disasters, accidental deletion, and hardware failures.
-            Our data recovery solutions include regular, automated backups, secure offsite storage, and
-            rapid data restoration when needed. We help you prepare for the worst—so you can get back to business
-            fast if something goes wrong. Let our team design your backup and recovery plan to ensure
-            business continuity.
+      <div className="container mx-auto px-4 py-20">
+        <h1 className="text-4xl font-bold text-center mb-8">Data Recovery Services</h1>
+        <div className="max-w-3xl mx-auto">
+          <img 
+            src="/lovable-uploads/data.png" 
+            alt="Data Recovery Services" 
+            className="w-full rounded-lg shadow-lg mb-8"
+          />
+          <p className="text-lg text-gray-700 mb-6">
+            Losing critical data can be a nightmare for any business. At IT Launch Solutions, we specialize in providing comprehensive data recovery services to retrieve your valuable information quickly and securely.
           </p>
-          
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="p-6 shadow-md">
-              <h2 className="text-xl font-semibold mb-3 text-blue-700">Automated Backup Solutions</h2>
-              <p className="text-gray-600">
-                Our automated backup systems ensure your critical data is regularly saved without manual intervention. 
-                We implement intelligent scheduling that minimizes performance impact while maintaining comprehensive 
-                protection of your files, databases, and system configurations. Your data is continuously protected 
-                without disrupting your business operations.
-              </p>
-            </Card>
-            
-            <Card className="p-6 shadow-md">
-              <h2 className="text-xl font-semibold mb-3 text-blue-700">Secure Offsite Storage</h2>
-              <p className="text-gray-600">
-                Protect your backups from local disasters with our secure offsite storage solutions. Your data is 
-                encrypted and transferred to geographically diverse locations, ensuring it remains safe even if your 
-                primary location is affected. Our redundant storage systems guarantee your backups are always available 
-                when you need them most.
-              </p>
-            </Card>
-            
-            <Card className="p-6 shadow-md">
-              <h2 className="text-xl font-semibold mb-3 text-blue-700">Rapid Restoration</h2>
-              <p className="text-gray-600">
-                When disaster strikes, our rapid restoration services minimize downtime and data loss. Our recovery 
-                systems can quickly restore individual files or complete systems, getting your business back online 
-                fast. We regularly test restoration processes to ensure they work flawlessly when needed, giving you 
-                confidence in your disaster recovery plan.
-              </p>
-            </Card>
-            
-            <Card className="p-6 shadow-md">
-              <h2 className="text-xl font-semibold mb-3 text-blue-700">Business Continuity Planning</h2>
-              <p className="text-gray-600">
-                We develop comprehensive business continuity strategies that go beyond simple backups. Our experts 
-                analyze your critical systems and create detailed recovery plans with defined RTOs and RPOs. This 
-                holistic approach ensures your business can continue operating during and after unexpected events, 
-                preserving both data and operational capabilities.
-              </p>
-            </Card>
-          </div>
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800">Our Data Recovery Process</h2>
+          <ul className="list-disc list-inside text-gray-600 mb-6">
+            <li><strong>Initial Consultation:</strong> We assess the data loss scenario to determine the best recovery approach.</li>
+            <li><strong>Data Evaluation:</strong> Our experts evaluate the damaged media to understand the extent of the data loss.</li>
+            <li><strong>Recovery Execution:</strong> Using advanced tools and techniques, we recover your data in a secure environment.</li>
+            <li><strong>Verification and Delivery:</strong> We verify the recovered data and deliver it to you on a secure medium.</li>
+          </ul>
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800">Why Choose Us?</h2>
+          <p className="text-lg text-gray-700 mb-6">
+            With years of experience in the IT sector, we understand the importance of data integrity and security. Our data recovery services are tailored to meet the unique needs of your business, ensuring minimal downtime and maximum data retrieval.
+          </p>
+          <ul className="list-disc list-inside text-gray-600 mb-6">
+            <li><strong>Expert Technicians:</strong> Our team consists of highly skilled data recovery specialists.</li>
+            <li><strong>Advanced Technology:</strong> We use state-of-the-art tools and techniques for data retrieval.</li>
+            <li><strong>Secure Environment:</strong> Your data is recovered in a secure and confidential environment.</li>
+            <li><strong>Fast Turnaround:</strong> We strive to recover your data as quickly as possible to minimize disruption.</li>
+          </ul>
+          <p className="text-lg text-gray-700">
+            Don't let data loss cripple your business. Contact IT Launch Solutions today for reliable and efficient data recovery services.
+          </p>
         </div>
-        <ContactSection />
       </div>
       <Footer />
     </div>
