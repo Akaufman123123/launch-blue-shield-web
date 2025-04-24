@@ -11,7 +11,7 @@ const PhoneSystems = () => {
         <h1 className="text-4xl font-bold text-center mb-8">Business Phone Systems</h1>
         <div className="max-w-3xl mx-auto">
           <img 
-            src="/lovable-uploads/525770f0-2cb4-4480-8613-8b5724cdcd95.png" 
+            src="/lovable-uploads/5a4750da-a4ee-4c36-91bd-25f8e665085e.png" 
             alt="Business Phone Systems" 
             className="w-full rounded-lg shadow-lg mb-8"
           />
