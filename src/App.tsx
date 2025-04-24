@@ -14,7 +14,6 @@ import Cybersecurity from "@/pages/services/Cybersecurity";
 import ServerManagement from "@/pages/services/ServerManagement";
 import NetworkSetup from "@/pages/services/NetworkSetup";
 import DataRecovery from "@/pages/services/DataRecovery";
-import CloudSecurity from "@/pages/services/CloudSecurity";
 import ITPlanning from "@/pages/services/ITPlanning";
 import WorkstationManagement from "@/pages/services/WorkstationManagement";
 import PhoneSystems from "@/pages/services/PhoneSystems";
@@ -39,7 +38,6 @@ const App = () => (
             <Route path="/services/server-management" element={<ServerManagement />} />
             <Route path="/services/network-setup" element={<NetworkSetup />} />
             <Route path="/services/data-recovery" element={<DataRecovery />} />
-            <Route path="/services/cloud-security" element={<CloudSecurity />} />
             <Route path="/services/it-planning" element={<ITPlanning />} />
             <Route path="/services/workstation-management" element={<WorkstationManagement />} />
             <Route path="/services/phone-systems" element={<PhoneSystems />} />

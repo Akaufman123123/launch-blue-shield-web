@@ -23,7 +23,7 @@ const AIMonitoring = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=2000&q=80" 
+              src="/lovable-uploads/720f0811-6667-4ed4-9885-b436b7d62257.png" 
               alt="AI-Powered IT Monitoring" 
               className="w-full h-80 object-cover" 
             />

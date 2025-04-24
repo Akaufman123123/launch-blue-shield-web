@@ -1,7 +1,6 @@
 import React from 'react';
 import { ITLaunchLogo } from './Logo';
 import { useNavigate, Link } from 'react-router-dom';
-import { Facebook, Twitter, Linkedin, Mail } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -30,32 +29,6 @@ export const Footer: React.FC = () => {
             <p className="text-gray-400 mb-6">
               Comprehensive IT, security, and managed services with predictable fees and dedicated support.
             </p>
-            <div className="flex space-x-4">
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-colors"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-colors"
-              >
-                <Twitter size={20} />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-colors"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a 
-                href="mailto:info@itlaunchsolutions.com" 
-                className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-blue-400 hover:bg-blue-600 hover:text-white transition-colors"
-              >
-                <Mail size={20} />
-              </a>
-            </div>
           </div>
           
           <div>

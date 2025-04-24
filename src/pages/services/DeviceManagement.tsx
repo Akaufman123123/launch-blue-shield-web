@@ -23,7 +23,7 @@ const DeviceManagement = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="mb-12 rounded-lg overflow-hidden shadow-lg">
             <img 
-              src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=2000&q=80" 
+              src="/lovable-uploads/24f29363-d39a-4bcf-9082-cb8c4da55289.png" 
               alt="Mobile Device Management" 
               className="w-full h-80 object-cover" 
             />
