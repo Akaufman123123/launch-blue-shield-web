@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
-import { Zap } from 'lucide-react';
+import { Zap, ArrowRight } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { ContactSection } from '@/components/ContactSection';
 import { Button } from '@/components/ui/button';
@@ -76,22 +76,30 @@ const ITPlanningImportance = () => {
             </ul>
           </div>
         </article>
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <h3 className="text-xl font-semibold mb-4">Read More Articles</h3>
-          <div className="flex flex-col sm:flex-row gap-4">
+        <div className="mt-10 pt-8 border-t border-gray-200">
+          <h3 className="text-xl font-semibold mb-4 text-blue-700">Read More Articles</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <Button 
-              variant="outline"
+              variant="outline" 
               onClick={() => navigate('/blog/firewalls-importance')}
-              className="flex-1"
+              className="w-full flex justify-between items-center text-left px-4 py-6 bg-blue-50 hover:bg-blue-100 border-blue-200"
             >
-              Read about Firewall Security
+              <div>
+                <div className="font-medium">Firewall Security</div>
+                <div className="text-sm text-gray-600">Protecting your business from threats</div>
+              </div>
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
-              variant="outline"
+              variant="outline" 
               onClick={() => navigate('/blog/data-recovery-importance')}
-              className="flex-1"
+              className="w-full flex justify-between items-center text-left px-4 py-6 bg-blue-50 hover:bg-blue-100 border-blue-200"
             >
-              Read about Data Recovery
+              <div>
+                <div className="font-medium">Data Recovery</div>
+                <div className="text-sm text-gray-600">Business continuity planning</div>
+              </div>
+              <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
         </div>
