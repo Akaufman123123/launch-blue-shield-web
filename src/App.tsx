@@ -21,6 +21,7 @@ import DeviceManagement from "@/pages/services/DeviceManagement";
 import Blog from "./pages/Blog";
 import FirewallsImportance from "./pages/blog/FirewallsImportance";
 import ITPlanningImportance from "./pages/blog/ITPlanningImportance";
+import DataRecoveryImportance from "./pages/blog/DataRecoveryImportance";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/firewalls-importance" element={<FirewallsImportance />} />
             <Route path="/blog/it-planning-importance" element={<ITPlanningImportance />} />
+            <Route path="/blog/data-recovery-importance" element={<DataRecoveryImportance />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/sitemap" element={<Sitemap />} />

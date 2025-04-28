@@ -98,14 +98,6 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation('/services/cloud-security')}
-                  className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
-                >
-                  Cloud Security
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => handleNavigation('/services/phone-systems')}
                   className="text-gray-400 hover:text-blue-400 transition-colors cursor-pointer"
                 >

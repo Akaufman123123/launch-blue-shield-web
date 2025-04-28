@@ -1,11 +1,15 @@
-
 import React, { useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Zap } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { ContactSection } from '@/components/ContactSection';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const ITPlanningImportance = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,7 +21,7 @@ const ITPlanningImportance = () => {
         <meta name="description" content="Discover how proper IT planning and architecture can drive business growth, reduce costs, and create a competitive advantage." />
       </Helmet>
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow pt-24">
         <article className="container mx-auto px-4 py-12 max-w-4xl">
           <div className="flex items-center gap-4 mb-6">
             <div className="p-3 bg-blue-100 rounded-full">
@@ -72,6 +76,26 @@ const ITPlanningImportance = () => {
             </ul>
           </div>
         </article>
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <h3 className="text-xl font-semibold mb-4">Read More Articles</h3>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button 
+              variant="outline"
+              onClick={() => navigate('/blog/firewalls-importance')}
+              className="flex-1"
+            >
+              Read about Firewall Security
+            </Button>
+            <Button 
+              variant="outline"
+              onClick={() => navigate('/blog/data-recovery-importance')}
+              className="flex-1"
+            >
+              Read about Data Recovery
+            </Button>
+          </div>
+        </div>
+        <ContactSection />
       </main>
       <Footer />
     </div>

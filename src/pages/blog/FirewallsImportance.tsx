@@ -1,11 +1,15 @@
-
 import React, { useEffect } from 'react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Shield } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import { ContactSection } from '@/components/ContactSection';
+import { Button } from '@/components/ui/button';
+import { useNavigate } from 'react-router-dom';
 
 const FirewallsImportance = () => {
+  const navigate = useNavigate();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,7 +21,7 @@ const FirewallsImportance = () => {
         <meta name="description" content="Learn about the importance of firewalls in protecting your business from cyber threats and maintaining a strong security infrastructure." />
       </Helmet>
       <Header />
-      <main className="flex-grow">
+      <main className="flex-grow pt-24">
         <article className="container mx-auto px-4 py-12 max-w-4xl">
           <div className="flex items-center gap-4 mb-6">
             <div className="p-3 bg-blue-100 rounded-full">
@@ -71,6 +75,26 @@ const FirewallsImportance = () => {
             </ul>
           </div>
         </article>
+        <div className="mt-12 pt-8 border-t border-gray-200">
+          <h3 className="text-xl font-semibold mb-4">Read More Articles</h3>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button 
+              variant="outline"
+              onClick={() => navigate('/blog/it-planning-importance')}
+              className="flex-1"
+            >
+              Learn about IT Planning
+            </Button>
+            <Button 
+              variant="outline"
+              onClick={() => navigate('/blog/data-recovery-importance')}
+              className="flex-1"
+            >
+              Read about Data Recovery
+            </Button>
+          </div>
+        </div>
+        <ContactSection />
       </main>
       <Footer />
     </div>

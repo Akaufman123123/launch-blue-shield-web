@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -51,6 +50,24 @@ const Sitemap: React.FC = () => (
           </li>
           <li>
             <Link to="/services/device-management" className="text-blue-600 hover:underline">Device Management</Link>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className="text-xl font-semibold mb-4 text-gray-700">Blog</h2>
+        <ul className="space-y-3 text-lg">
+          <li>
+            <Link to="/blog" className="text-blue-600 hover:underline">Blog Home</Link>
+          </li>
+          <li>
+            <Link to="/blog/firewalls-importance" className="text-blue-600 hover:underline">The Critical Role of Firewalls</Link>
+          </li>
+          <li>
+            <Link to="/blog/it-planning-importance" className="text-blue-600 hover:underline">Strategic IT Planning</Link>
+          </li>
+          <li>
+            <Link to="/blog/data-recovery-importance" className="text-blue-600 hover:underline">Data Recovery and Business Continuity</Link>
           </li>
         </ul>
       </section>
