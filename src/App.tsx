@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -19,6 +18,9 @@ import WorkstationManagement from "@/pages/services/WorkstationManagement";
 import PhoneSystems from "@/pages/services/PhoneSystems";
 import AIMonitoring from "@/pages/services/AIMonitoring";
 import DeviceManagement from "@/pages/services/DeviceManagement";
+import Blog from "./pages/Blog";
+import FirewallsImportance from "./pages/blog/FirewallsImportance";
+import ITPlanningImportance from "./pages/blog/ITPlanningImportance";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +33,9 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/firewalls-importance" element={<FirewallsImportance />} />
+            <Route path="/blog/it-planning-importance" element={<ITPlanningImportance />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/sitemap" element={<Sitemap />} />
