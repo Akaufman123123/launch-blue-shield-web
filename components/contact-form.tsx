@@ -62,6 +62,7 @@ export default function ContactForm() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="John Doe"
                     required
+                    aria-required="true"
                   />
                 </div>
                 <div className="text-left">
@@ -75,6 +76,7 @@ export default function ContactForm() {
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                     placeholder="john@example.com"
                     required
+                    aria-required="true"
                   />
                 </div>
               </div>
@@ -101,12 +103,15 @@ export default function ContactForm() {
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
                   placeholder="Tell us about your IT needs..."
                   required
+                  aria-required="true"
                 ></textarea>
               </div>
 
               {formState.message && (
                 <div
                   className={`p-4 rounded-md ${formState.success ? "bg-green-50 text-green-700" : "bg-red-50 text-red-700"}`}
+                  role="alert"
+                  aria-live="polite"
                 >
                   {formState.message}
                 </div>
@@ -116,6 +121,7 @@ export default function ContactForm() {
                 type="submit"
                 disabled={formState.isSubmitting}
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-6 rounded-md font-medium transition-colors disabled:opacity-70"
+                aria-label={formState.isSubmitting ? "Sending message..." : "Send message"}
               >
                 {formState.isSubmitting ? "Sending..." : "Send Message"}
               </button>
@@ -131,15 +137,15 @@ export default function ContactForm() {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-2 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 mr-2 flex-shrink-0" aria-hidden="true" />
                   <span>Immediate acknowledgment of your request</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-2 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 mr-2 flex-shrink-0" aria-hidden="true" />
                   <span>Technical support within minutes</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="h-6 w-6 mr-2 flex-shrink-0" />
+                  <CheckCircle className="h-6 w-6 mr-2 flex-shrink-0" aria-hidden="true" />
                   <span>Dedicated account manager for your business</span>
                 </li>
               </ul>
@@ -149,18 +155,18 @@ export default function ContactForm() {
               <h3 className="text-2xl font-bold mb-6 text-left">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-start">
-                  <Mail className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" />
+                  <Mail className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" aria-hidden="true" />
                   <div>
-                    <p className="font-medium">Email</p>
+                    <h4 className="font-medium">Email</h4>
                     <p className="text-gray-600" data-email="info|itlaunchsolutions.com">
                       [email]
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start">
-                  <Clock className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" />
+                  <Clock className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" aria-hidden="true" />
                   <div>
-                    <p className="font-medium">Support</p>
+                    <h4 className="font-medium">Support</h4>
                     <p className="text-gray-600">24/7 Available</p>
                   </div>
                 </div>

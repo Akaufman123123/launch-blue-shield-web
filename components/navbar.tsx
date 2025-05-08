@@ -73,7 +73,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link href="/" className="flex items-center space-x-2">
             <div className="bg-blue-500 text-white p-1.5 rounded">
-              <Shield className="h-5 w-5" />
+              <Shield className="h-5 w-5" aria-hidden="true" />
             </div>
             <span className="text-xl font-semibold">
               <span className="text-blue-500">IT</span>Launch
@@ -81,13 +81,20 @@ export default function Navbar() {
           </Link>
 
           {/* Mobile menu button */}
-          <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button
+            className="md:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -104,17 +111,23 @@ export default function Navbar() {
               <button
                 className="flex items-center text-gray-700 hover:text-blue-500 font-medium"
                 onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                aria-expanded={isServicesDropdownOpen}
+                aria-label="Services menu"
+                aria-controls="services-dropdown"
               >
                 Services
                 {isServicesDropdownOpen ? (
-                  <ChevronUp className="ml-1 h-4 w-4" />
+                  <ChevronUp className="ml-1 h-4 w-4" aria-hidden="true" />
                 ) : (
-                  <ChevronDown className="ml-1 h-4 w-4" />
+                  <ChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
                 )}
               </button>
 
               {isServicesDropdownOpen && (
-                <div className="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                <div
+                  id="services-dropdown"
+                  className="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-50"
+                >
                   <div className="py-2">
                     <Link
                       href="/services"
@@ -158,7 +171,7 @@ export default function Navbar() {
 
       {/* Mobile navigation */}
       {isMenuOpen && (
-        <nav className="md:hidden bg-white py-4 px-4 border-t border-gray-200">
+        <nav id="mobile-menu" className="md:hidden bg-white py-4 px-4 border-t border-gray-200">
           <div className="flex flex-col space-y-4">
             <Link
               href="/"
@@ -173,17 +186,20 @@ export default function Navbar() {
               <button
                 className="flex items-center text-gray-700 hover:text-blue-500 font-medium py-2 w-full text-left"
                 onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
+                aria-expanded={isServicesDropdownOpen}
+                aria-label="Services submenu"
+                aria-controls="mobile-services-dropdown"
               >
                 Services
                 {isServicesDropdownOpen ? (
-                  <ChevronUp className="ml-1 h-4 w-4" />
+                  <ChevronUp className="ml-1 h-4 w-4" aria-hidden="true" />
                 ) : (
-                  <ChevronDown className="ml-1 h-4 w-4" />
+                  <ChevronDown className="ml-1 h-4 w-4" aria-hidden="true" />
                 )}
               </button>
 
               {isServicesDropdownOpen && (
-                <div className="pl-4 mt-2 space-y-2">
+                <div id="mobile-services-dropdown" className="pl-4 mt-2 space-y-2">
                   <Link
                     href="/services"
                     className="block py-2 text-gray-700 hover:text-blue-500"
