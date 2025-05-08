@@ -21,8 +21,8 @@ const nextConfig = {
   experimental: {
     // Use modern JavaScript features without unnecessary transpilation
     optimizePackageImports: ['lucide-react'],
-    // Optimize CSS
-    optimizeCss: true,
+    // Disable CSS optimization that requires critters
+    optimizeCss: false,
     // Use modern JavaScript features
     serverActions: true,
   },
