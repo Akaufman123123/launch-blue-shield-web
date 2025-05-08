@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import CybersecurityForHealthcareClient from "./CybersecurityForHealthcareClient"
 
 export const metadata: Metadata = {
   title: "5 Essential Cybersecurity Measures for Healthcare Organizations | IT Launch",
@@ -32,8 +31,4 @@ export const metadata: Metadata = {
     images: ["https://itlaunchsolutions.com/images/cyb.png"],
     creator: "@itlaunchsolutions",
   },
-}
-
-export default function CybersecurityForHealthcarePost() {
-  return <CybersecurityForHealthcareClient />
 }

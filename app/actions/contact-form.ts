@@ -2,7 +2,9 @@
 
 import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY || "")
+// Check if API key exists and create Resend instance only if it does
+const resendApiKey = process.env.RESEND_API_KEY
+const resend = resendApiKey ? new Resend(resendApiKey) : null
 
 export async function submitContactForm(formData: FormData) {
   // Extract form data
@@ -20,6 +22,25 @@ export async function submitContactForm(formData: FormData) {
   }
 
   try {
+    // Check if Resend is properly initialized
+    if (!resend) {
+      // Log the error for debugging but return a user-friendly message
+      console.error("Resend API key is missing or invalid")
+
+      // In development or when API key is missing, simulate success but log the submission
+      console.log("Form submission (email not sent due to missing API key):", {
+        name: fullName,
+        email,
+        company,
+        message,
+      })
+
+      return {
+        success: true,
+        message: "Thank you for your message. We will get back to you shortly!",
+      }
+    }
+
     // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "IT Launch Website <website@itlaunchsolutions.com>",

@@ -10,6 +10,31 @@ export const metadata: Metadata = {
     "Learn how to protect connected medical devices from cyber threats and ensure patient safety in the era of IoMT (Internet of Medical Things).",
   keywords:
     "medical device security, healthcare IoT security, IoMT security, connected medical devices, medical device cybersecurity, healthcare cybersecurity",
+  openGraph: {
+    title: "Securing Medical Devices: The Next Frontier in Healthcare Cybersecurity | IT Launch",
+    description:
+      "Learn how to protect connected medical devices from cyber threats and ensure patient safety in the era of IoMT (Internet of Medical Things).",
+    url: "https://itlaunchsolutions.com/blog/securing-medical-devices",
+    siteName: "IT Launch Solutions",
+    images: [
+      {
+        url: "https://itlaunchsolutions.com/images/secmeddev.png",
+        width: 1200,
+        height: 630,
+        alt: "Medical devices in a laboratory setting",
+      },
+    ],
+    locale: "en_US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Securing Medical Devices: The Next Frontier in Healthcare Cybersecurity | IT Launch",
+    description:
+      "Learn how to protect connected medical devices from cyber threats and ensure patient safety in the era of IoMT (Internet of Medical Things).",
+    images: ["https://itlaunchsolutions.com/images/secmeddev.png"],
+    creator: "@itlaunchsolutions",
+  },
 }
 
 export default function SecuringMedicalDevicesPost() {
@@ -39,8 +64,8 @@ export default function SecuringMedicalDevicesPost() {
 
             <div className="relative h-[400px] rounded-lg overflow-hidden mb-8">
               <Image
-                src="/placeholder.svg?height=400&width=800"
-                alt="Medical devices connected to a network"
+                src="/images/secmeddev.png"
+                alt="Medical devices in a laboratory setting"
                 fill
                 className="object-cover"
               />
@@ -169,6 +194,61 @@ export default function SecuringMedicalDevicesPost() {
                 <li>Review vendor remote access policies and implement strict controls</li>
               </ul>
 
+              <h2 className="text-2xl font-bold mt-8 mb-4">Real-World Medical Device Security Threats</h2>
+              <p className="mb-6">
+                Understanding the actual threats facing connected medical devices helps illustrate the importance of
+                comprehensive security measures:
+              </p>
+
+              <h3 className="text-xl font-bold mt-6 mb-3">Case Study: Insulin Pump Vulnerabilities</h3>
+              <p className="mb-6">
+                In 2019, researchers discovered vulnerabilities in a popular insulin pump that could allow attackers to
+                remotely control insulin delivery, potentially causing life-threatening situations for patients. The
+                manufacturer had to issue emergency patches and replace certain models. This incident highlighted how
+                medical device security directly impacts patient safety.
+              </p>
+
+              <h3 className="text-xl font-bold mt-6 mb-3">Case Study: Hospital Network Compromise via HVAC System</h3>
+              <p className="mb-6">
+                A major hospital experienced a significant data breach when attackers gained access to their network
+                through an inadequately secured HVAC control system. Once inside the network, the attackers moved
+                laterally to access patient records and clinical systems. This case demonstrates how seemingly
+                peripheral systems can provide entry points to critical healthcare infrastructure.
+              </p>
+
+              <h3 className="text-xl font-bold mt-6 mb-3">Case Study: Ransomware Affecting Medical Imaging</h3>
+              <p className="mb-6">
+                A ransomware attack on a regional healthcare system specifically targeted their PACS (Picture Archiving
+                and Communication System), encrypting thousands of medical images and making them inaccessible to
+                clinicians. The organization had to divert emergency patients to other facilities and postpone numerous
+                procedures while systems were restored from backups.
+              </p>
+
+              <h3 className="text-xl font-bold mt-6 mb-3">Emerging Threats to Watch</h3>
+              <p className="mb-6">As medical device technology evolves, new security challenges are emerging:</p>
+              <ul className="list-disc pl-6 mb-6">
+                <li>
+                  <strong>AI-powered attacks:</strong> Sophisticated attacks using artificial intelligence to identify
+                  and exploit vulnerabilities in medical device firmware
+                </li>
+                <li>
+                  <strong>Supply chain compromises:</strong> Attacks targeting the components and software libraries
+                  used in medical device manufacturing
+                </li>
+                <li>
+                  <strong>Credential harvesting:</strong> Targeted phishing campaigns against biomedical engineers and
+                  clinical staff with device access
+                </li>
+                <li>
+                  <strong>Wireless protocol exploits:</strong> Attacks against Bluetooth, Wi-Fi, and proprietary
+                  wireless protocols used by medical devices
+                </li>
+                <li>
+                  <strong>Ransomware specifically targeting medical devices:</strong> Specialized malware designed to
+                  identify and encrypt medical devices for maximum impact
+                </li>
+              </ul>
+
               <h2 className="text-2xl font-bold mt-8 mb-4">Building a Medical Device Security Program</h2>
               <p className="mb-6">
                 Effective medical device security requires a coordinated approach involving multiple stakeholders:
@@ -209,20 +289,44 @@ export default function SecuringMedicalDevicesPost() {
                 help you develop and implement a comprehensive security strategy tailored to your organization's needs.
               </p>
             </div>
-
-            <div className="border-t border-gray-200 mt-12 pt-8">
-              <h3 className="text-xl font-bold mb-4">Share this article</h3>
-              <div className="flex space-x-4">
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-md">Facebook</button>
-                <button className="bg-blue-400 text-white px-4 py-2 rounded-md">Twitter</button>
-                <button className="bg-blue-700 text-white px-4 py-2 rounded-md">LinkedIn</button>
-              </div>
-            </div>
           </div>
         </div>
       </article>
 
       <ContactForm />
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: "Securing Medical Devices: The Next Frontier in Healthcare Cybersecurity",
+            image: "https://itlaunchsolutions.com/images/secmeddev.png",
+            datePublished: "2025-05-10T08:00:00+08:00",
+            dateModified: "2025-05-10T08:00:00+08:00",
+            author: {
+              "@type": "Person",
+              name: "Robert Anderson",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "IT Launch Solutions",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://itlaunchsolutions.com/favicon.png",
+              },
+            },
+            description:
+              "Learn how to protect connected medical devices from cyber threats and ensure patient safety in the era of IoMT (Internet of Medical Things).",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://itlaunchsolutions.com/blog/securing-medical-devices",
+            },
+          }),
+        }}
+      />
     </main>
   )
 }

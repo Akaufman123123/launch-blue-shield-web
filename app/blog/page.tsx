@@ -1,16 +1,17 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Calendar, User, ArrowRight } from "lucide-react"
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "IT Blog | IT Launch Solutions",
-  description:
-    "Stay updated with the latest IT trends, cybersecurity tips, and technology insights for businesses in the medical industry.",
-  keywords: "IT blog, cybersecurity tips, healthcare IT, medical technology, HIPAA compliance, data security",
-}
+import { useEffect } from "react"
+import { scrollToTop } from "@/utils/scroll-utils"
 
 export default function BlogPage() {
+  // Scroll to top when page loads
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const blogPosts = [
     {
       id: 1,
@@ -20,7 +21,7 @@ export default function BlogPage() {
       date: "May 1, 2025",
       author: "John Smith",
       category: "Cybersecurity",
-      image: "/placeholder.svg?height=300&width=600",
+      image: "/images/cyb.png",
       slug: "cybersecurity-for-healthcare",
     },
     {
@@ -31,7 +32,7 @@ export default function BlogPage() {
       date: "April 22, 2025",
       author: "Sarah Johnson",
       category: "Compliance",
-      image: "/placeholder.svg?height=300&width=600",
+      image: "/images/hippa.png",
       slug: "hipaa-compliance-it-infrastructure",
     },
     {
@@ -42,7 +43,7 @@ export default function BlogPage() {
       date: "April 10, 2025",
       author: "Michael Chen",
       category: "Cloud Computing",
-      image: "/placeholder.svg?height=300&width=600",
+      image: "/images/cloud.png",
       slug: "cloud-solutions-medical-practices",
     },
     {
@@ -53,7 +54,7 @@ export default function BlogPage() {
       date: "March 28, 2025",
       author: "Emily Rodriguez",
       category: "Network",
-      image: "/placeholder.svg?height=300&width=600",
+      image: "/images/networkmed.png",
       slug: "network-optimization-telemedicine",
     },
     {
@@ -64,7 +65,7 @@ export default function BlogPage() {
       date: "March 15, 2025",
       author: "David Wilson",
       category: "Cybersecurity",
-      image: "/placeholder.svg?height=300&width=600",
+      image: "/images/ransom.png",
       slug: "protecting-ehr-ransomware",
     },
     {
@@ -75,7 +76,7 @@ export default function BlogPage() {
       date: "March 5, 2025",
       author: "Lisa Thompson",
       category: "Security Training",
-      image: "/placeholder.svg?height=300&width=600",
+      image: "/images/train.png",
       slug: "security-training-medical-staff",
     },
   ]
@@ -101,8 +102,8 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-lg overflow-hidden">
               <Image
-                src="/placeholder.svg?height=400&width=600"
-                alt="Featured blog post"
+                src="/images/secmeddev.png"
+                alt="Securing Medical Devices: The Next Frontier in Healthcare Cybersecurity"
                 fill
                 className="object-cover"
               />
@@ -128,6 +129,7 @@ export default function BlogPage() {
               <Link
                 href="/blog/securing-medical-devices"
                 className="inline-flex items-center text-blue-500 font-medium hover:text-blue-700"
+                onClick={scrollToTop}
               >
                 Read Full Article <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -162,18 +164,13 @@ export default function BlogPage() {
                   <Link
                     href={`/blog/${post.slug}`}
                     className="inline-flex items-center text-blue-500 font-medium hover:text-blue-700"
+                    onClick={scrollToTop}
                   >
                     Read More <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 text-center">
-            <button className="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition-colors">
-              Load More Articles
-            </button>
           </div>
         </div>
       </section>

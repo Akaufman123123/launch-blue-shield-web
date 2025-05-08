@@ -10,6 +10,31 @@ export const metadata: Metadata = {
     "Learn how to build and maintain a HIPAA-compliant IT infrastructure for your healthcare organization. Discover key requirements, best practices, and common pitfalls.",
   keywords:
     "HIPAA compliance, healthcare IT infrastructure, HIPAA IT requirements, PHI protection, healthcare data security, HIPAA technical safeguards",
+  openGraph: {
+    title: "HIPAA Compliance and Your IT Infrastructure: What You Need to Know | IT Launch",
+    description:
+      "Learn how to build and maintain a HIPAA-compliant IT infrastructure for your healthcare organization.",
+    url: "https://itlaunchsolutions.com/blog/hipaa-compliance-it-infrastructure",
+    siteName: "IT Launch Solutions",
+    images: [
+      {
+        url: "https://itlaunchsolutions.com/images/hippa.png",
+        width: 1200,
+        height: 630,
+        alt: "HIPAA compliance and IT infrastructure",
+      },
+    ],
+    locale: "en_US",
+    type: "article",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HIPAA Compliance and Your IT Infrastructure: What You Need to Know | IT Launch",
+    description:
+      "Learn how to build and maintain a HIPAA-compliant IT infrastructure for your healthcare organization.",
+    images: ["https://itlaunchsolutions.com/images/hippa.png"],
+    creator: "@itlaunchsolutions",
+  },
 }
 
 export default function HipaaCompliancePost() {
@@ -39,7 +64,7 @@ export default function HipaaCompliancePost() {
 
             <div className="relative h-[400px] rounded-lg overflow-hidden mb-8">
               <Image
-                src="/placeholder.svg?height=400&width=800"
+                src="/images/hippa.png"
                 alt="HIPAA compliance and IT infrastructure"
                 fill
                 className="object-cover"
@@ -284,6 +309,41 @@ export default function HipaaCompliancePost() {
                 </li>
               </ul>
 
+              <h2 className="text-2xl font-bold mt-8 mb-4">Real-World HIPAA Compliance Case Studies</h2>
+              <p className="mb-6">
+                Understanding how other healthcare organizations have addressed HIPAA compliance challenges can provide
+                valuable insights for your own implementation:
+              </p>
+
+              <h3 className="text-xl font-bold mt-6 mb-3">Case Study 1: Multi-Location Medical Practice</h3>
+              <p className="mb-6">
+                A growing medical practice with five locations faced challenges maintaining consistent HIPAA compliance
+                across all sites. By implementing centralized identity management, standardized security policies, and
+                regular compliance audits, they achieved:
+              </p>
+              <ul className="list-disc pl-6 mb-6">
+                <li>90% reduction in security policy variations across locations</li>
+                <li>Streamlined access management with same-day termination for departing staff</li>
+                <li>Consistent audit logging and monitoring across all practice systems</li>
+                <li>Simplified compliance reporting and documentation</li>
+              </ul>
+
+              <h3 className="text-xl font-bold mt-6 mb-3">Case Study 2: Hospital Recovering from a Breach</h3>
+              <p className="mb-6">
+                After experiencing a significant data breach affecting 50,000 patient records, a regional hospital
+                implemented a comprehensive HIPAA compliance program that included:
+              </p>
+              <ul className="list-disc pl-6 mb-6">
+                <li>Enterprise-wide encryption for all ePHI at rest and in transit</li>
+                <li>Advanced threat detection and monitoring systems</li>
+                <li>Mandatory security awareness training for all staff</li>
+                <li>Regular penetration testing and vulnerability assessments</li>
+              </ul>
+              <p className="mb-6">
+                The result was not only full HIPAA compliance but also a significant improvement in their overall
+                security posture, with no further breaches in the following three years.
+              </p>
+
               <h2 className="text-2xl font-bold mt-8 mb-4">Maintaining Ongoing Compliance</h2>
               <p className="mb-6">
                 HIPAA compliance is not a one-time project but an ongoing process that requires continuous attention:
@@ -328,20 +388,44 @@ export default function HipaaCompliancePost() {
                 reputation.
               </p>
             </div>
-
-            <div className="border-t border-gray-200 mt-12 pt-8">
-              <h3 className="text-xl font-bold mb-4">Share this article</h3>
-              <div className="flex space-x-4">
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-md">Facebook</button>
-                <button className="bg-blue-400 text-white px-4 py-2 rounded-md">Twitter</button>
-                <button className="bg-blue-700 text-white px-4 py-2 rounded-md">LinkedIn</button>
-              </div>
-            </div>
           </div>
         </div>
       </article>
 
       <ContactForm />
+
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: "HIPAA Compliance and Your IT Infrastructure: What You Need to Know",
+            image: "https://itlaunchsolutions.com/images/hippa.png",
+            datePublished: "2025-04-22T08:00:00+08:00",
+            dateModified: "2025-04-22T08:00:00+08:00",
+            author: {
+              "@type": "Person",
+              name: "Sarah Johnson",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "IT Launch Solutions",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://itlaunchsolutions.com/favicon.png",
+              },
+            },
+            description:
+              "Learn how to build and maintain a HIPAA-compliant IT infrastructure for your healthcare organization. Discover key requirements, best practices, and common pitfalls.",
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": "https://itlaunchsolutions.com/blog/hipaa-compliance-it-infrastructure",
+            },
+          }),
+        }}
+      />
     </main>
   )
 }

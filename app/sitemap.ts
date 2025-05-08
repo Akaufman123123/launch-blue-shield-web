@@ -41,15 +41,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Blog pages
   const blogPages = [
-    "/blog/securing-medical-devices",
+    "/blog",
     "/blog/cybersecurity-for-healthcare",
     "/blog/hipaa-compliance-it-infrastructure",
     "/blog/cloud-solutions-medical-practices",
+    "/blog/securing-medical-devices",
+    "/blog/network-optimization-telemedicine",
+    "/blog/protecting-ehr-ransomware",
+    "/blog/security-training-medical-staff",
   ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.6,
+    changeFrequency: path === "/blog" ? ("weekly" as const) : ("monthly" as const),
+    priority: path === "/blog" ? 0.7 : 0.6,
   }))
 
   return [...mainPages, ...servicePages, ...blogPages]
