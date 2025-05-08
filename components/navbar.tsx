@@ -145,9 +145,6 @@ export default function Navbar() {
             <Link href="/clients" className="text-gray-700 hover:text-blue-500 font-medium">
               Clients
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-500 font-medium">
-              About
-            </Link>
             <a
               href="#contact"
               className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md font-medium transition-colors"
@@ -222,13 +219,6 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Clients
-            </Link>
-            <Link
-              href="/about"
-              className="text-gray-700 hover:text-blue-500 font-medium py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
             </Link>
             <a
               href="#contact"

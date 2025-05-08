@@ -152,7 +152,9 @@ export default function ContactForm() {
                   <Mail className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-gray-600">info@itlaunchsolutions.com</p>
+                    <p className="text-gray-600" data-email="info|itlaunchsolutions.com">
+                      [email]
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start">

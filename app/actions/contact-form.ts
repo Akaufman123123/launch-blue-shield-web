@@ -6,6 +6,11 @@ import { Resend } from "resend"
 const resendApiKey = process.env.RESEND_API_KEY
 const resend = resendApiKey ? new Resend(resendApiKey) : null
 
+// Obfuscated email parts
+const emailUser = "info"
+const emailDomain = "itlaunchsolutions.com"
+const contactEmail = `${emailUser}@${emailDomain}`
+
 export async function submitContactForm(formData: FormData) {
   // Extract form data
   const fullName = formData.get("fullName") as string
@@ -43,8 +48,8 @@ export async function submitContactForm(formData: FormData) {
 
     // Send email using Resend
     const { data, error } = await resend.emails.send({
-      from: "IT Launch Website <website@itlaunchsolutions.com>",
-      to: ["info@itlaunchsolutions.com"],
+      from: `IT Launch Website <website@${emailDomain}>`,
+      to: [contactEmail],
       subject: `New Contact Form Submission from ${fullName}`,
       html: `
         <h2>New Contact Form Submission</h2>

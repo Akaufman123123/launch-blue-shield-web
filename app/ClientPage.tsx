@@ -5,8 +5,30 @@ import { Shield, Clock, Database, Server, Wifi, Monitor, Phone, Cpu, CheckCircle
 import ContactForm from "@/components/contact-form"
 import { scrollToTop } from "@/utils/scroll-utils"
 import LogoCarousel from "@/components/logo-carousel"
+import { deferExecution, executeTasksInChunks } from "@/utils/performance-utils"
+import { useEffect } from "react"
 
 export default function ClientPage() {
+  useEffect(() => {
+    // Defer non-critical operations
+    deferExecution(() => {
+      // Example of breaking up a long task into smaller chunks
+      const heavyTasks = [
+        () => {
+          // Analytics initialization
+          console.log("Analytics initialized")
+        },
+        () => {
+          // Other non-critical initialization
+          console.log("Other initialization")
+        },
+        // Add more tasks as needed
+      ]
+
+      executeTasksInChunks(heavyTasks, 2, 10)
+    }, 100)
+  }, [])
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
