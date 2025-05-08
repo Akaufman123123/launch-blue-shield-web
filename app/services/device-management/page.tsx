@@ -15,7 +15,7 @@ export default function DeviceManagementPage() {
       {/* Hero Section */}
       <section className="relative">
         <div className="w-full h-64 md:h-80">
-          <Image src="/placeholder.svg?key=he6mr" alt="Device Management" fill className="object-cover" priority />
+          <Image src="/images/device1.png" alt="Device Management" fill className="object-cover" priority />
         </div>
         <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center">
           <div className="container mx-auto px-4 md:px-6">
