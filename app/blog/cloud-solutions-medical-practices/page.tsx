@@ -10,31 +10,6 @@ export const metadata: Metadata = {
     "Discover how cloud technology can transform your medical practice with improved accessibility, scalability, and disaster recovery while maintaining HIPAA compliance.",
   keywords:
     "healthcare cloud solutions, medical practice cloud computing, HIPAA compliant cloud, EHR cloud hosting, medical data cloud storage, healthcare IT cloud",
-  openGraph: {
-    title: "Cloud Solutions for Medical Practices: Benefits and Considerations | IT Launch",
-    description:
-      "Discover how cloud technology can transform your medical practice with improved accessibility, scalability, and disaster recovery.",
-    url: "https://itlaunchsolutions.com/blog/cloud-solutions-medical-practices",
-    siteName: "IT Launch Solutions",
-    images: [
-      {
-        url: "https://itlaunchsolutions.com/images/cloud.png",
-        width: 1200,
-        height: 630,
-        alt: "Cloud computing for healthcare",
-      },
-    ],
-    locale: "en_US",
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Cloud Solutions for Medical Practices: Benefits and Considerations | IT Launch",
-    description:
-      "Discover how cloud technology can transform your medical practice with improved accessibility, scalability, and disaster recovery.",
-    images: ["https://itlaunchsolutions.com/images/cloud.png"],
-    creator: "@itlaunchsolutions",
-  },
 }
 
 export default function CloudSolutionsPost() {
@@ -63,7 +38,12 @@ export default function CloudSolutionsPost() {
             </div>
 
             <div className="relative h-[400px] rounded-lg overflow-hidden mb-8">
-              <Image src="/images/cloud.png" alt="Cloud computing for healthcare" fill className="object-cover" />
+              <Image
+                src="/placeholder.svg?height=400&width=800"
+                alt="Cloud computing for healthcare"
+                fill
+                className="object-cover"
+              />
             </div>
 
             <div className="prose max-w-none">
@@ -396,52 +376,12 @@ export default function CloudSolutionsPost() {
               </p>
             </div>
 
-            <div className="border-t border-gray-200 mt-12 pt-8">
-              <h3 className="text-xl font-bold mb-4">Share this article</h3>
-              <div className="flex space-x-4">
-                <button className="bg-blue-600 text-white px-4 py-2 rounded-md">Facebook</button>
-                <button className="bg-blue-400 text-white px-4 py-2 rounded-md">Twitter</button>
-                <button className="bg-blue-700 text-white px-4 py-2 rounded-md">LinkedIn</button>
-              </div>
-            </div>
+
           </div>
         </div>
       </article>
 
       <ContactForm />
-
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: "Cloud Solutions for Medical Practices: Benefits and Considerations",
-            image: "https://itlaunchsolutions.com/images/cloud.png",
-            datePublished: "2025-04-10T08:00:00+08:00",
-            dateModified: "2025-04-10T08:00:00+08:00",
-            author: {
-              "@type": "Person",
-              name: "Michael Chen",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "IT Launch Solutions",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://itlaunchsolutions.com/favicon.png",
-              },
-            },
-            description:
-              "Discover how cloud technology can transform your medical practice with improved accessibility, scalability, and disaster recovery while maintaining HIPAA compliance.",
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": "https://itlaunchsolutions.com/blog/cloud-solutions-medical-practices",
-            },
-          }),
-        }}
-      />
     </main>
   )
 }

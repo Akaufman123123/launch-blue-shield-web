@@ -8,31 +8,6 @@ export const metadata: Metadata = {
   description:
     "Stay updated with the latest IT trends, cybersecurity tips, and technology insights for businesses in the medical industry.",
   keywords: "IT blog, cybersecurity tips, healthcare IT, medical technology, HIPAA compliance, data security",
-  openGraph: {
-    title: "IT Blog | IT Launch Solutions",
-    description:
-      "Stay updated with the latest IT trends, cybersecurity tips, and technology insights for businesses in the medical industry.",
-    url: "https://itlaunchsolutions.com/blog",
-    siteName: "IT Launch Solutions",
-    images: [
-      {
-        url: "https://itlaunchsolutions.com/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "IT Launch Solutions Blog",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "IT Blog | IT Launch Solutions",
-    description:
-      "Stay updated with the latest IT trends, cybersecurity tips, and technology insights for businesses in the medical industry.",
-    images: ["https://itlaunchsolutions.com/og-image.png"],
-    creator: "@itlaunchsolutions",
-  },
 }
 
 export default function BlogPage() {
@@ -45,7 +20,7 @@ export default function BlogPage() {
       date: "May 1, 2025",
       author: "John Smith",
       category: "Cybersecurity",
-      image: "/images/cyb.png",
+      image: "/placeholder.svg?height=300&width=600",
       slug: "cybersecurity-for-healthcare",
     },
     {
@@ -56,7 +31,7 @@ export default function BlogPage() {
       date: "April 22, 2025",
       author: "Sarah Johnson",
       category: "Compliance",
-      image: "/images/hippa.png",
+      image: "/placeholder.svg?height=300&width=600",
       slug: "hipaa-compliance-it-infrastructure",
     },
     {
@@ -67,7 +42,7 @@ export default function BlogPage() {
       date: "April 10, 2025",
       author: "Michael Chen",
       category: "Cloud Computing",
-      image: "/images/cloud.png",
+      image: "/placeholder.svg?height=300&width=600",
       slug: "cloud-solutions-medical-practices",
     },
     {
@@ -126,8 +101,8 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-lg overflow-hidden">
               <Image
-                src="/images/secmeddev.png"
-                alt="Securing Medical Devices: The Next Frontier in Healthcare Cybersecurity"
+                src="/placeholder.svg?height=400&width=600"
+                alt="Featured blog post"
                 fill
                 className="object-cover"
               />
@@ -193,6 +168,12 @@ export default function BlogPage() {
                 </div>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <button className="border border-blue-500 text-blue-500 hover:bg-blue-50 px-6 py-3 rounded-md font-medium transition-colors">
+              Load More Articles
+            </button>
           </div>
         </div>
       </section>

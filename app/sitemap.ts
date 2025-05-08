@@ -41,13 +41,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Blog pages
   const blogPages = [
+    "/blog/securing-medical-devices",
     "/blog/cybersecurity-for-healthcare",
     "/blog/hipaa-compliance-it-infrastructure",
     "/blog/cloud-solutions-medical-practices",
-    "/blog/securing-medical-devices",
-    "/blog/network-optimization-telemedicine",
-    "/blog/protecting-ehr-ransomware",
-    "/blog/security-training-medical-staff",
   ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),

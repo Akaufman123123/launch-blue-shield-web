@@ -10,31 +10,6 @@ export const metadata: Metadata = {
     "Learn how to protect connected medical devices from cyber threats and ensure patient safety in the era of IoMT (Internet of Medical Things).",
   keywords:
     "medical device security, healthcare IoT security, IoMT security, connected medical devices, medical device cybersecurity, healthcare cybersecurity",
-  openGraph: {
-    title: "Securing Medical Devices: The Next Frontier in Healthcare Cybersecurity | IT Launch",
-    description:
-      "Learn how to protect connected medical devices from cyber threats and ensure patient safety in the era of IoMT (Internet of Medical Things).",
-    url: "https://itlaunchsolutions.com/blog/securing-medical-devices",
-    siteName: "IT Launch Solutions",
-    images: [
-      {
-        url: "https://itlaunchsolutions.com/images/secmeddev.png",
-        width: 1200,
-        height: 630,
-        alt: "Medical devices in a laboratory setting",
-      },
-    ],
-    locale: "en_US",
-    type: "article",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Securing Medical Devices: The Next Frontier in Healthcare Cybersecurity | IT Launch",
-    description:
-      "Learn how to protect connected medical devices from cyber threats and ensure patient safety in the era of IoMT (Internet of Medical Things).",
-    images: ["https://itlaunchsolutions.com/images/secmeddev.png"],
-    creator: "@itlaunchsolutions",
-  },
 }
 
 export default function SecuringMedicalDevicesPost() {
@@ -64,8 +39,8 @@ export default function SecuringMedicalDevicesPost() {
 
             <div className="relative h-[400px] rounded-lg overflow-hidden mb-8">
               <Image
-                src="/images/secmeddev.png"
-                alt="Medical devices in a laboratory setting"
+                src="/placeholder.svg?height=400&width=800"
+                alt="Medical devices connected to a network"
                 fill
                 className="object-cover"
               />
@@ -248,39 +223,6 @@ export default function SecuringMedicalDevicesPost() {
       </article>
 
       <ContactForm />
-
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: "Securing Medical Devices: The Next Frontier in Healthcare Cybersecurity",
-            image: "https://itlaunchsolutions.com/images/secmeddev.png",
-            datePublished: "2025-05-10T08:00:00+08:00",
-            dateModified: "2025-05-10T08:00:00+08:00",
-            author: {
-              "@type": "Person",
-              name: "Robert Anderson",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "IT Launch Solutions",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://itlaunchsolutions.com/favicon.png",
-              },
-            },
-            description:
-              "Learn how to protect connected medical devices from cyber threats and ensure patient safety in the era of IoMT (Internet of Medical Things).",
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": "https://itlaunchsolutions.com/blog/securing-medical-devices",
-            },
-          }),
-        }}
-      />
     </main>
   )
 }
