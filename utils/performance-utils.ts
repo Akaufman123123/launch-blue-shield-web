@@ -1,74 +1,66 @@
 /**
- * Breaks up long-running tasks into smaller chunks to avoid blocking the main thread
- * @param tasks Array of functions to execute
- * @param chunkSize Number of tasks to execute per chunk
- * @param delay Delay between chunks in milliseconds
+ * Utility functions for monitoring and improving website performance
  */
-export function executeTasksInChunks<T>(tasks: (() => T)[], chunkSize = 5, delay = 0): Promise<T[]> {
-  return new Promise((resolve) => {
-    const results: T[] = []
-    let index = 0
-
-    function executeNextChunk() {
-      const chunk = tasks.slice(index, index + chunkSize)
-      index += chunkSize
-
-      if (chunk.length === 0) {
-        resolve(results)
-        return
-      }
-
-      // Execute this chunk of tasks
-      chunk.forEach((task) => {
-        try {
-          results.push(task())
-        } catch (error) {
-          console.error("Error executing task:", error)
-        }
-      })
-
-      // Schedule the next chunk
-      if (index < tasks.length) {
-        setTimeout(executeNextChunk, delay)
-      } else {
-        resolve(results)
-      }
-    }
-
-    // Start executing chunks
-    executeNextChunk()
-  })
-}
 
 /**
- * Defers non-critical JavaScript execution
- * @param fn Function to execute
- * @param delay Delay in milliseconds
+ * Defers the execution of a function until the browser is idle.
+ * @param fn The function to defer.
+ * @param timeout Optional timeout in milliseconds.
  */
-export function deferExecution(fn: () => void, delay = 0): void {
-  if (typeof window !== "undefined") {
-    if (window.requestIdleCallback) {
-      window.requestIdleCallback(() => setTimeout(fn, delay))
-    } else {
-      setTimeout(fn, delay)
-    }
+export function deferExecution(fn: () => void, timeout = 1): void {
+  if (typeof window === "undefined") {
+    return
+  }
+
+  if (window.requestIdleCallback) {
+    window.requestIdleCallback(
+      () => {
+        try {
+          fn()
+        } catch (error) {
+          console.error("Error in deferred function:", error)
+        }
+      },
+      { timeout },
+    )
+  } else {
+    setTimeout(() => {
+      try {
+        fn()
+      } catch (error) {
+        console.error("Error in deferred function:", error)
+      }
+    }, timeout)
   }
 }
 
 /**
- * Loads a script dynamically
- * @param src Script source URL
- * @param async Whether to load the script asynchronously
- * @param defer Whether to defer script loading
+ * Executes tasks in smaller chunks to avoid blocking the main thread.
+ * @param tasks An array of functions to execute.
+ * @param chunkSize The number of tasks to execute in each chunk.
+ * @param delay The delay between each chunk in milliseconds.
  */
-export function loadScript(src: string, async = true, defer = true): Promise<void> {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement("script")
-    script.src = src
-    script.async = async
-    script.defer = defer
-    script.onload = () => resolve()
-    script.onerror = reject
-    document.head.appendChild(script)
-  })
+export function executeTasksInChunks(tasks: (() => void)[], chunkSize: number, delay: number): void {
+  if (typeof window === "undefined") {
+    return
+  }
+
+  function processChunk(index: number) {
+    const end = Math.min(index + chunkSize, tasks.length)
+    for (let i = index; i < end; i++) {
+      try {
+        tasks[i]()
+      } catch (error) {
+        console.error("Error executing task:", error)
+      }
+    }
+
+    if (end < tasks.length) {
+      setTimeout(() => {
+        processChunk(end)
+      }, delay)
+    }
+  }
+
+  processChunk(0)
 }

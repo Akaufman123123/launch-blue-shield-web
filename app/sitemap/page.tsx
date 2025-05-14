@@ -108,6 +108,11 @@ export default function SitemapPage() {
             <h2 className="text-2xl font-bold mb-4">Blog Posts</h2>
             <ul className="space-y-2 list-disc pl-6">
               <li>
+                <Link href="/blog/enterprise-device-management" className="text-blue-600 hover:underline">
+                  Healthcare Device Management: MDM Solutions for Medical Organizations
+                </Link>
+              </li>
+              <li>
                 <Link href="/blog/cybersecurity-for-healthcare" className="text-blue-600 hover:underline">
                   Cybersecurity for Healthcare: Protecting Patient Data
                 </Link>

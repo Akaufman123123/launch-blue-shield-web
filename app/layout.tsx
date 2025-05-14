@@ -14,19 +14,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "IT Launch Solutions - Reliable IT Services",
+    default: "IT Launch Solutions - Medical IT Services & Healthcare Technology",
     template: "%s | IT Launch Solutions",
   },
   description:
-    "Comprehensive IT services with predictable fees and 24/7 monitoring for businesses in the medical industry.",
+    "Comprehensive IT services with predictable fees and 24/7 monitoring for healthcare organizations and medical practices.",
   keywords: [
-    "IT services",
-    "cybersecurity",
-    "server management",
-    "network setup",
-    "data recovery",
-    "medical IT",
-    "healthcare IT",
+    "medical IT services",
+    "healthcare cybersecurity",
+    "HIPAA compliance",
+    "medical device security",
+    "healthcare technology",
+    "EHR support",
+    "telemedicine IT",
     "managed services",
   ],
   authors: [{ name: "IT Launch Solutions" }],
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://itlaunchsolutions.com/",
     siteName: "IT Launch Solutions",
-    title: "IT Launch Solutions - Reliable IT Services",
+    title: "IT Launch Solutions - Medical IT Services & Healthcare Technology",
     description:
-      "Comprehensive IT services with predictable fees and 24/7 monitoring for businesses in the medical industry.",
+      "Comprehensive IT services with predictable fees and 24/7 monitoring for healthcare organizations and medical practices.",
     images: [
       {
         url: "https://itlaunchsolutions.com/shield.ico",
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IT Launch Solutions - Reliable IT Services",
+    title: "IT Launch Solutions - Medical IT Services & Healthcare Technology",
     description:
-      "Comprehensive IT services with predictable fees and 24/7 monitoring for businesses in the medical industry.",
+      "Comprehensive IT services with predictable fees and 24/7 monitoring for healthcare organizations and medical practices.",
     images: ["https://itlaunchsolutions.com/shield.ico"],
     creator: "@itlaunchsolutions",
   },
@@ -77,7 +77,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics */}
+        {/* Google Analytics - Load asynchronously */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-WE96SX3LYR" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -118,66 +118,10 @@ export default function RootLayout({
           }}
         />
 
-        {/* Add inline critical CSS */}
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-          /* Critical CSS for above-the-fold content */
-          body {
-            margin: 0;
-            font-family: Inter, sans-serif;
-          }
-          .container {
-            width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem;
-            padding-right: 1rem;
-          }
-          @media (min-width: 768px) {
-            .container {
-              padding-left: 1.5rem;
-              padding-right: 1.5rem;
-            }
-          }
-          /* Header styles */
-          header {
-            background-color: white;
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-          }
-          .flex {
-            display: flex;
-          }
-          .items-center {
-            align-items: center;
-          }
-          .justify-between {
-            justify-content: space-between;
-          }
-          /* Hero section styles */
-          .bg-blue-50 {
-            background-color: #eff6ff;
-          }
-          .py-16 {
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-          }
-          .text-4xl {
-            font-size: 2.25rem;
-            line-height: 2.5rem;
-          }
-          .font-bold {
-            font-weight: 700;
-          }
-          .text-gray-700 {
-            color: #374151;
-          }
-        `,
-          }}
-        />
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={inter.className}>
         <CanonicalTag />
@@ -185,7 +129,7 @@ export default function RootLayout({
         {children}
         <Footer />
 
-        {/* Performance optimization script */}
+        {/* Performance optimization script - load after page content */}
         <Script id="performance-optimizations" strategy="afterInteractive">
           {`
             // Optimize resource loading
@@ -197,6 +141,25 @@ export default function RootLayout({
                 preloadLink.rel = 'prefetch';
                 preloadLink.href = '/' + link;
                 document.head.appendChild(preloadLink);
+              });
+            }
+            
+            // Lazy load images that are below the fold
+            if ('IntersectionObserver' in window) {
+              const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+              const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    const image = entry.target;
+                    image.src = image.dataset.src;
+                    image.classList.remove('lazy');
+                    imageObserver.unobserve(image);
+                  }
+                });
+              });
+              
+              lazyImages.forEach(image => {
+                imageObserver.observe(image);
               });
             }
             

@@ -1,27 +1,30 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
-import { useEffect } from "react"
-import { getCanonicalUrl } from "@/utils/canonical-utils"
+import { getCanonicalUrl, cleanCanonicalUrl } from "@/utils/canonical-utils"
 
 export default function CanonicalTag() {
   const pathname = usePathname()
+  const [canonicalUrl, setCanonicalUrl] = useState<string>("")
 
   useEffect(() => {
-    // Get existing canonical tag if any
-    let canonicalTag = document.querySelector('link[rel="canonical"]') as HTMLLinkElement
+    // Generate the canonical URL
+    const baseUrl = "https://itlaunchsolutions.com"
+    const url = getCanonicalUrl(pathname, baseUrl)
 
-    // If no canonical tag exists, create one
-    if (!canonicalTag) {
-      canonicalTag = document.createElement("link")
-      canonicalTag.rel = "canonical"
-      document.head.appendChild(canonicalTag)
-    }
+    // Clean the URL (remove tracking parameters, etc.)
+    const cleanUrl = cleanCanonicalUrl(url)
 
-    // Set the href attribute to the canonical URL
-    canonicalTag.href = getCanonicalUrl(pathname)
+    setCanonicalUrl(cleanUrl)
   }, [pathname])
 
-  // This component doesn't render anything visible
-  return null
+  // Only render the tag on the client side when we have the URL
+  if (!canonicalUrl) return null
+
+  return (
+    <>
+      <link rel="canonical" href={canonicalUrl} />
+    </>
+  )
 }

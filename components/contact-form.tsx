@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { CheckCircle, Clock, Mail, Phone } from "lucide-react"
 import { submitContactForm } from "@/app/actions/contact-form"
+import { createProtectedEmailLink } from "@/utils/email-utils"
 
 export default function ContactForm() {
   const [formState, setFormState] = useState<{
@@ -43,7 +44,7 @@ export default function ContactForm() {
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl font-bold mb-4 text-center">Get in Touch</h2>
         <p className="max-w-3xl mx-auto text-lg text-gray-700 mb-12 text-center">
-          Need reliable IT services? Contact us today for a free consultation.
+          Need reliable IT services for your healthcare organization? Contact us today for a free consultation.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -170,9 +171,7 @@ export default function ContactForm() {
                   <div>
                     <h4 className="font-medium">Email</h4>
                     <p className="text-gray-600">
-                      <a href="mailto:info@itlaunchsolutions.com" className="hover:text-blue-600 transition-colors">
-                        info@itlaunchsolutions.com
-                      </a>
+                      {createProtectedEmailLink("info@itlaunchsolutions.com", "info", "itlaunchsolutions.com")}
                     </p>
                   </div>
                 </div>
