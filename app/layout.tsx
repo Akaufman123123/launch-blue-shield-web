@@ -77,6 +77,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-WE96SX3LYR" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WE96SX3LYR');
+          `}
+        </Script>
+
         <link rel="icon" href="/shield.ico" sizes="any" />
         <link rel="icon" href="/shield.ico" type="image/x-icon" />
         <link rel="apple-touch-icon" href="/shield.ico" />
@@ -93,9 +104,9 @@ export default function RootLayout({
               logo: "https://itlaunchsolutions.com/shield.ico",
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "",
+                telephone: "1-888-282-1299",
                 contactType: "customer service",
-                email: "info" + "@" + "itlaunchsolutions.com", // Obfuscated email
+                email: "info@itlaunchsolutions.com",
                 availableLanguage: "English",
               },
               sameAs: [
@@ -225,27 +236,6 @@ export default function RootLayout({
                 executeDeferredTasks();
               });
             }
-            
-            // Email obfuscation
-            document.addEventListener('DOMContentLoaded', function() {
-              // Find all elements with data-email attribute
-              const emailElements = document.querySelectorAll('[data-email]');
-              emailElements.forEach(element => {
-                const emailParts = element.getAttribute('data-email').split('|');
-                const email = emailParts.join('@');
-                
-                if (element.tagName === 'A') {
-                  element.href = 'mailto:' + email;
-                }
-                
-                // Replace content with obfuscated email
-                if (element.textContent.includes('[email]')) {
-                  element.textContent = element.textContent.replace('[email]', email);
-                } else {
-                  element.textContent = email;
-                }
-              });
-            });
           `}
         </Script>
       </body>

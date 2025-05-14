@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { CheckCircle, Clock, Mail } from "lucide-react"
+import { CheckCircle, Clock, Mail, Phone } from "lucide-react"
 import { submitContactForm } from "@/app/actions/contact-form"
 
 export default function ContactForm() {
@@ -155,11 +155,24 @@ export default function ContactForm() {
               <h3 className="text-2xl font-bold mb-6 text-left">Contact Information</h3>
               <div className="space-y-4">
                 <div className="flex items-start">
+                  <Phone className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" aria-hidden="true" />
+                  <div>
+                    <h4 className="font-medium">Phone</h4>
+                    <p className="text-gray-600">
+                      <a href="tel:18882821299" className="hover:text-blue-600 transition-colors">
+                        1-888-282-1299
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-start">
                   <Mail className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" aria-hidden="true" />
                   <div>
                     <h4 className="font-medium">Email</h4>
-                    <p className="text-gray-600" data-email="info|itlaunchsolutions.com">
-                      [email]
+                    <p className="text-gray-600">
+                      <a href="mailto:info@itlaunchsolutions.com" className="hover:text-blue-600 transition-colors">
+                        info@itlaunchsolutions.com
+                      </a>
                     </p>
                   </div>
                 </div>

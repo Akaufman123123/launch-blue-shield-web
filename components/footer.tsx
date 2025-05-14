@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Shield, Mail, Clock } from "lucide-react"
+import { Shield, Mail, Clock, Phone } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -89,11 +89,22 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
-                <Mail className="h-5 w-5 text-blue-400 mt-0.5" />
-                <span className="text-gray-400">info@itlaunchsolutions.com</span>
+                <Phone className="h-5 w-5 text-blue-400 mt-0.5" aria-hidden="true" />
+                <a href="tel:18882821299" className="text-gray-400 hover:text-blue-400 transition-colors">
+                  1-888-282-1299
+                </a>
               </li>
               <li className="flex items-start space-x-3">
-                <Clock className="h-5 w-5 text-blue-400 mt-0.5" />
+                <Mail className="h-5 w-5 text-blue-400 mt-0.5" aria-hidden="true" />
+                <a
+                  href="mailto:info@itlaunchsolutions.com"
+                  className="text-gray-400 hover:text-blue-400 transition-colors"
+                >
+                  info@itlaunchsolutions.com
+                </a>
+              </li>
+              <li className="flex items-start space-x-3">
+                <Clock className="h-5 w-5 text-blue-400 mt-0.5" aria-hidden="true" />
                 <span className="text-gray-400">Support: 24/7 Available</span>
               </li>
             </ul>

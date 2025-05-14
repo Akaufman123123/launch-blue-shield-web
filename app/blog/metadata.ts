@@ -1,10 +1,9 @@
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "IT Blog | IT Launch Solutions",
-  description:
-    "Stay updated with the latest IT trends, cybersecurity tips, and technology insights for businesses in the medical industry.",
-  keywords: "IT blog, cybersecurity tips, healthcare IT, medical technology, HIPAA compliance, data security",
+  title: "Healthcare IT Blog: Medical Technology Insights | IT Launch",
+  description: "Expert insights on healthcare IT, cybersecurity, and technology solutions for medical practices.",
+  keywords: "healthcare IT blog, medical cybersecurity, HIPAA compliance, medical technology",
   openGraph: {
     title: "IT Blog | IT Launch Solutions",
     description:

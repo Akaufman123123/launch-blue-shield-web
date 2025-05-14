@@ -33,12 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/contact`,
       lastModified: currentDate,
       changeFrequency: "monthly",
@@ -120,6 +114,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     // Blog pages
+    {
+      url: `${baseUrl}/blog/enterprise-device-management`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
     {
       url: `${baseUrl}/blog/cybersecurity-for-healthcare`,
       lastModified: currentDate,
