@@ -64,7 +64,7 @@ export function createEncodedMailto(email: string, subject?: string, body?: stri
  * @param domain The domain part of the email (after @)
  * @returns JSX for a spam-protected email link
  */
-export function createProtectedEmailLink(displayText: string, username: string, domain: string): JSX.Element {
+export function createProtectedEmailLink(displayText: string, username: string, domain: string) {
   // Instead of a string, we're now using a proper function for onClick
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()

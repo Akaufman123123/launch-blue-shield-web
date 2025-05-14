@@ -1,7 +1,15 @@
+"use client"
+
 import Link from "next/link"
 import { Shield, Mail, Clock, Phone } from "lucide-react"
 
 export default function Footer() {
+  // Simple email obfuscation for the footer
+  const emailClickHandler = () => {
+    window.location.href = "mailto:info@itlaunchsolutions.com"
+    return false
+  }
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4 md:px-6">
@@ -96,10 +104,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start space-x-3">
                 <Mail className="h-5 w-5 text-blue-400 mt-0.5" aria-hidden="true" />
-                <a
-                  href="mailto:info@itlaunchsolutions.com"
-                  className="text-gray-400 hover:text-blue-400 transition-colors"
-                >
+                <a href="#" onClick={emailClickHandler} className="text-gray-400 hover:text-blue-400 transition-colors">
                   info@itlaunchsolutions.com
                 </a>
               </li>

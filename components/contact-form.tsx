@@ -1,9 +1,10 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { CheckCircle, Clock, Mail, Phone } from "lucide-react"
 import { submitContactForm } from "@/app/actions/contact-form"
-import { createProtectedEmailLink } from "@/utils/email-utils"
 
 export default function ContactForm() {
   const [formState, setFormState] = useState<{
@@ -37,6 +38,13 @@ export default function ContactForm() {
         isSubmitting: false,
       })
     }
+  }
+
+  // Simple email obfuscation
+  const emailParts = ["info", "itlaunchsolutions.com"]
+  const handleEmailClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    window.location.href = `mailto:${emailParts[0]}@${emailParts[1]}`
   }
 
   return (
@@ -171,7 +179,9 @@ export default function ContactForm() {
                   <div>
                     <h4 className="font-medium">Email</h4>
                     <p className="text-gray-600">
-                      {createProtectedEmailLink("info@itlaunchsolutions.com", "info", "itlaunchsolutions.com")}
+                      <a href="#" onClick={handleEmailClick} className="hover:text-blue-600 transition-colors">
+                        info@itlaunchsolutions.com
+                      </a>
                     </p>
                   </div>
                 </div>
