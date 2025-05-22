@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import ClientPage from "./ClientPage"
-import SvgClientLogos from "@/components/svg-client-logos"
 
 export const metadata: Metadata = {
   title: "IT Launch Solutions - Comprehensive IT Services for Businesses",
@@ -13,10 +12,5 @@ export const metadata: Metadata = {
 }
 
 export default function Home() {
-  return (
-    <>
-      <ClientPage />
-      <SvgClientLogos />
-    </>
-  )
+  return <ClientPage />
 }

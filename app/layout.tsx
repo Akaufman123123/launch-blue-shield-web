@@ -1,7 +1,7 @@
 import type React from "react"
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import Script from "next/script"
@@ -79,7 +79,7 @@ export default function RootLayout({
       <head>
         {/* Static canonical tag for SEO */}
         <link rel="canonical" href="https://itlaunchsolutions.com" />
-        
+
         {/* Google Analytics - Load asynchronously */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-WE96SX3LYR" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
